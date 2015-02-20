@@ -1,0 +1,42 @@
+.TH "lib/my/src/str/my_strncmp.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/str/my_strncmp.c \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmy_strncmp\fP (char *a, char *b, int nb)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int my_strncmp (char *a, char *b, intnb)"
+
+.PP
+Definition at line 11 of file my_strncmp\&.c\&.
+.PP
+Referenced by case_unsetenv(), my_find_pwd(), and my_unsetenv()\&.
+.PP
+.nf
+12 {
+13   int   i;
+14 
+15   i = 0;
+16   while (a[i] != '\0' && b[i] != '\0' && i != nb)
+17     {
+18       if (a[i] == b[i])
+19     i++;
+20       else
+21     return (1);
+22     }
+23   return (0);
+24 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

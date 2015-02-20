@@ -1,0 +1,163 @@
+.TH "include/mysh.h" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/mysh.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBs_ptrtab\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBs_ptrtab\fP \fBt_ptrtab\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBget_next_line\fP (const int fd)"
+.br
+.ti -1c
+.RI "void \fBmy_prompt\fP ()"
+.br
+.ti -1c
+.RI "int \fBminishell1\fP (char **env)"
+.br
+.ti -1c
+.RI "void \fBmy_aff_env\fP (char **env)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBs_ptrtab\fP		 \fBt_ptrtab\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "char* get_next_line (const intfd)"
+
+.PP
+Definition at line 81 of file get_next_line\&.c\&.
+.PP
+References s_getline::buffer, s_getline::dest, s_getline::i, s_getline::ret, SIZE_OF_READ, stat_in_buff(), and s_getline::stop\&.
+.PP
+.nf
+82 {
+83   static char   statbuffer[SIZE_OF_READ + 1];
+84   t_getline     s;
+85 
+86   s\&.i = 1;
+87   s\&.stop = 0;
+88   while (s\&.stop == 0)
+89     {
+90       if ((s\&.buffer = malloc(SIZE_OF_READ * s\&.i + SIZE_OF_READ)) == NULL)
+91     return (NULL);
+92       if ((s\&.ret = read(fd, statbuffer, SIZE_OF_READ)) == - 1)
+93     return (NULL);
+94       statbuffer[s\&.ret] = '\0';
+95       s\&.buffer = stat_in_buff(statbuffer, s\&.buffer, &s, s\&.dest);
+96       if (s\&.i != 1)
+97     free(s\&.dest);
+98       if (s\&.ret == 0)
+99     {
+100       close(fd);
+101       return (s\&.buffer);
+102     }
+103       s\&.dest = s\&.buffer;
+104       s\&.i++;
+105     }
+106   return (s\&.buffer);
+107 }
+.fi
+.SS "int minishell1 (char **env)"
+
+.PP
+Definition at line 112 of file mysh\&.c\&.
+.PP
+References case_env(), case_exit(), case_pwd(), case_unsetenv(), get_next_line(), my_putstr(), and my_strcmp()\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+113 {
+114   static const t_ptrtab tab[] =
+115     {
+116       { "exit", &case_exit },
+117       { "env", &case_env },
+118       { "pwd", &case_pwd },
+119     };
+120   char  *c;
+121   int   i;
+122   int   ret;
+123 
+124   i = 0;
+125   if ((c = get_next_line(0)) == NULL)
+126     return (1);
+127   if ((ret = case_unsetenv(c, env)) == 1)
+128     return (1);
+129   else if (ret == 0)
+130     return (0);
+131   while (i != 3 && my_strcmp(c, tab[i]\&.str) != 0)
+132     i++;
+133   if (i >= 3)
+134     {
+135       my_putstr(c);
+136       my_putstr(": command not found\n");
+137     }
+138   else
+139     if (tab[i]\&.ptr_tab(env) == 1)
+140       return (1);
+141   return (0);
+142 }
+.fi
+.SS "void my_aff_env (char **env)"
+
+.PP
+Definition at line 14 of file my_aff_env\&.c\&.
+.PP
+References my_printf()\&.
+.PP
+Referenced by case_env()\&.
+.PP
+.nf
+15 {
+16   int   i;
+17 
+18   i = 0;
+19   while (env[i] != 0)
+20     {
+21       my_printf("%s\n", env[i]);
+22       ++i;
+23     }
+24 }
+.fi
+.SS "void my_prompt ()"
+
+.PP
+Definition at line 144 of file mysh\&.c\&.
+.PP
+References my_putchar(), my_putnbr(), and my_putstr()\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+145 {
+146   static int    size = 1;
+147 
+148   my_putstr("$>");
+149   my_putnbr(size);
+150   my_putchar(' ');
+151   size++;
+152 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

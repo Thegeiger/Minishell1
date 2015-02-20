@@ -1,0 +1,159 @@
+.TH "lib/my/src/printf/case_printf_part2.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/case_printf_part2.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBcase_b\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_di\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_o\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBx_case\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_u\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int case_b (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 13 of file case_printf_part2\&.c\&.
+.PP
+References convert_base_deci_2()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+15 {
+16   long          n;
+17   int       r;
+18 
+19   (void)*s;
+20   (void)*format;
+21   (void)*tab;
+22   n = (long)argv;
+23   r = convert_base_deci_2((int)n);
+24   return (r);
+25 }
+.fi
+.SS "int case_di (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 27 of file case_printf_part2\&.c\&.
+.PP
+References my_lputnbr(), my_putnbrs(), s_index::nbr, and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+29 {
+30   long      n;
+31   int       r;
+32 
+33   (void)tab;
+34   (void)format;
+35   n = (long)argv;
+36   if (s->p == 2)
+37     r = my_lputnbr(n);
+38   else
+39     r = my_putnbrs((int)n, s->p, s->nbr);
+40   s->p = 0;
+41   return (r);
+42 }
+.fi
+.SS "int case_o (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 44 of file case_printf_part2\&.c\&.
+.PP
+References convert_base_deci_8_lunint(), convert_base_deci_8_unint(), and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+46 {
+47   long      n;
+48   int       r;
+49 
+50   (void)*tab;
+51   (void)*s;
+52   (void)*format;
+53   n = (long)argv;
+54   if (s->p == 2)
+55     convert_base_deci_8_lunint((long unsigned int)n);
+56   else
+57     r = convert_base_deci_8_unint((unsigned int)n);
+58   return (r);
+59   s->p = 0;
+60 }
+.fi
+.SS "int case_u (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 79 of file case_printf_part2\&.c\&.
+.PP
+References my_lunputnbr(), my_unputnbrs(), s_index::nbr, and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+81 {
+82   long      n;
+83   int       r;
+84 
+85   (void)*s;
+86   (void)*tab;
+87   (void)*format;
+88   n = (long)argv;
+89   if (s->p == 2)
+90     my_lunputnbr((long unsigned int)n);
+91   else
+92     r = my_unputnbrs((unsigned int)n, s->p, s->nbr);
+93   s->p = 0;
+94   return (r);
+95 }
+.fi
+.SS "int x_case (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 62 of file case_printf_part2\&.c\&.
+.PP
+References convert_base_deci_16_lun(), convert_base_deci_16_un(), and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+64 {
+65   long      n;
+66   int       r;
+67 
+68   (void)*tab;
+69   (void)*s;
+70   (void)*format;
+71   n = (long)argv;
+72   if (s->p == 2)
+73     r = convert_base_deci_16_lun((long unsigned int)n, "0123456789ABCDEF");
+74   else
+75     r = convert_base_deci_16_un((unsigned int)n, "0123456789ABCDEF");
+76   return (r);
+77 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

@@ -1,0 +1,46 @@
+.TH "lib/my/src/str/my_putnstr.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/str/my_putnstr.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmy_putnstr\fP (char *str, int nb)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void my_putnstr (char *str, intnb)"
+
+.PP
+Definition at line 13 of file my_putnstr\&.c\&.
+.PP
+References my_putchar(), and my_strlen()\&.
+.PP
+Referenced by my_find_pwd()\&.
+.PP
+.nf
+14 {
+15   int   i;
+16 
+17   i = nb;
+18   if (nb >= my_strlen(str))
+19     return ;
+20   while (str[i])
+21     {
+22       my_putchar(str[i]);
+23       i++;
+24     }
+25 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

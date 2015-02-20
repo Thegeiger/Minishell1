@@ -1,0 +1,137 @@
+.TH "lib/my/src/printf/convert_base_deci.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/convert_base_deci.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBconvert_base_deci_8_unint\fP (unsigned int nb)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_16_un\fP (unsigned int nb, char *str)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_16\fP (long nb, char *str)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int convert_base_deci_16 (longnb, char *str)"
+
+.PP
+Definition at line 67 of file convert_base_deci\&.c\&.
+.PP
+References my_rev_int_tab_long()\&.
+.PP
+Referenced by case_p()\&.
+.PP
+.nf
+68 {
+69   int   base;
+70   long   res;
+71   char  *tab;
+72   long   i;
+73 
+74   tab = malloc(sizeof(*tab) * 32 + 1);
+75   if (tab == NULL)
+76     return (1);
+77   res = 1;
+78   i = 0;
+79   base = 16;
+80   while (res != 0)
+81     {
+82       res = nb / base;
+83       tab[i] = str[nb % base];
+84       i++;
+85       nb = res;
+86     }
+87   tab[i] = '\0';
+88   i = my_rev_int_tab_long(tab, i);
+89   free(tab);
+90   return (i);
+91 }
+.fi
+.SS "int convert_base_deci_16_un (unsigned intnb, char *str)"
+
+.PP
+Definition at line 40 of file convert_base_deci\&.c\&.
+.PP
+References my_rev_int_tab_un()\&.
+.PP
+Referenced by case_x(), and x_case()\&.
+.PP
+.nf
+41 {
+42   int       base;
+43   unsigned int  res;
+44   char      *tab;
+45   unsigned int  i;
+46 
+47   tab = malloc(sizeof(*tab) * 16 + 1);
+48   if (tab == NULL)
+49     return (1);
+50   res = 1;
+51   i = 0;
+52   base = 16;
+53   while (res != 0)
+54     {
+55       res = nb / base;
+56       tab[i] = nb % base;
+57       tab[i] = str[nb % base];
+58       i++;
+59       nb = res;
+60     }
+61   tab[i] = '\0';
+62   my_rev_int_tab_un(tab, i);
+63   free(tab);
+64   return (i);
+65 }
+.fi
+.SS "int convert_base_deci_8_unint (unsigned intnb)"
+
+.PP
+Definition at line 14 of file convert_base_deci\&.c\&.
+.PP
+References my_rev_unint_tab()\&.
+.PP
+Referenced by case_o()\&.
+.PP
+.nf
+15 {
+16   int       base;
+17   unsigned int  res;
+18   unsigned int  *tab;
+19   int       i;
+20 
+21   tab = malloc(sizeof(*tab) * 16 + 1);
+22   if (tab == NULL)
+23     return (1);
+24   res = 1;
+25   i = 0;
+26   base = 8;
+27   while (res != 0)
+28     {
+29       res = nb / base;
+30       tab[i] = nb % base;
+31       i++;
+32       nb = res;
+33     }
+34   tab[i] = '\0';
+35   my_rev_unint_tab(tab, i);
+36   free(tab);
+37   return (i);
+38 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

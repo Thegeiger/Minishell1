@@ -1,0 +1,80 @@
+\hypertarget{get__next__line_8c}{\section{lib/my/src/str/get\+\_\+next\+\_\+line.c File Reference}
+\label{get__next__line_8c}\index{lib/my/src/str/get\+\_\+next\+\_\+line.\+c@{lib/my/src/str/get\+\_\+next\+\_\+line.\+c}}
+}
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}my.\+h\char`\"{}}\\*
+Include dependency graph for get\+\_\+next\+\_\+line.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{get__next__line_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{get__next__line_8c_a9bf3a9107dbcf7a29220551c1fdd07ce}{where\+\_\+my\+\_\+buff\+\_\+end} (char $\ast$statbuffer, char $\ast$stockstat, int j)
+\item 
+void \hyperlink{get__next__line_8c_a922043af008f3521c98c490bfb92b0b7}{my\+\_\+gstrcpy} (char $\ast$buffer, char $\ast$stockstat, \hyperlink{my_8h_a1670174b47ab43c748df989ae9ef5984}{t\+\_\+getline} $\ast$s, char $\ast$dest)
+\item 
+char $\ast$ \hyperlink{get__next__line_8c_a7c57c30e5ef063511c69026f042e8c39}{stat\+\_\+in\+\_\+buff} (char $\ast$statbuffer, char $\ast$buffer, \hyperlink{my_8h_a1670174b47ab43c748df989ae9ef5984}{t\+\_\+getline} $\ast$s, char $\ast$dest)
+\item 
+char $\ast$ \hyperlink{get__next__line_8c_aa36259f17fd04d9decba71955aedeb45}{get\+\_\+next\+\_\+line} (const int fd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{get__next__line_8c_aa36259f17fd04d9decba71955aedeb45}{\index{get\+\_\+next\+\_\+line.\+c@{get\+\_\+next\+\_\+line.\+c}!get\+\_\+next\+\_\+line@{get\+\_\+next\+\_\+line}}
+\index{get\+\_\+next\+\_\+line@{get\+\_\+next\+\_\+line}!get\+\_\+next\+\_\+line.\+c@{get\+\_\+next\+\_\+line.\+c}}
+\subsubsection[{get\+\_\+next\+\_\+line}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\+\_\+next\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{const int}]{fd}
+\end{DoxyParamCaption}
+)}}\label{get__next__line_8c_aa36259f17fd04d9decba71955aedeb45}
+
+
+Definition at line 81 of file get\+\_\+next\+\_\+line.\+c.
+
+\hypertarget{get__next__line_8c_a922043af008f3521c98c490bfb92b0b7}{\index{get\+\_\+next\+\_\+line.\+c@{get\+\_\+next\+\_\+line.\+c}!my\+\_\+gstrcpy@{my\+\_\+gstrcpy}}
+\index{my\+\_\+gstrcpy@{my\+\_\+gstrcpy}!get\+\_\+next\+\_\+line.\+c@{get\+\_\+next\+\_\+line.\+c}}
+\subsubsection[{my\+\_\+gstrcpy}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+gstrcpy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{char $\ast$}]{stockstat, }
+\item[{{\bf t\+\_\+getline} $\ast$}]{s, }
+\item[{char $\ast$}]{dest}
+\end{DoxyParamCaption}
+)}}\label{get__next__line_8c_a922043af008f3521c98c490bfb92b0b7}
+
+
+Definition at line 29 of file get\+\_\+next\+\_\+line.\+c.
+
+\hypertarget{get__next__line_8c_a7c57c30e5ef063511c69026f042e8c39}{\index{get\+\_\+next\+\_\+line.\+c@{get\+\_\+next\+\_\+line.\+c}!stat\+\_\+in\+\_\+buff@{stat\+\_\+in\+\_\+buff}}
+\index{stat\+\_\+in\+\_\+buff@{stat\+\_\+in\+\_\+buff}!get\+\_\+next\+\_\+line.\+c@{get\+\_\+next\+\_\+line.\+c}}
+\subsubsection[{stat\+\_\+in\+\_\+buff}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ stat\+\_\+in\+\_\+buff (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{statbuffer, }
+\item[{char $\ast$}]{buffer, }
+\item[{{\bf t\+\_\+getline} $\ast$}]{s, }
+\item[{char $\ast$}]{dest}
+\end{DoxyParamCaption}
+)}}\label{get__next__line_8c_a7c57c30e5ef063511c69026f042e8c39}
+
+
+Definition at line 55 of file get\+\_\+next\+\_\+line.\+c.
+
+\hypertarget{get__next__line_8c_a9bf3a9107dbcf7a29220551c1fdd07ce}{\index{get\+\_\+next\+\_\+line.\+c@{get\+\_\+next\+\_\+line.\+c}!where\+\_\+my\+\_\+buff\+\_\+end@{where\+\_\+my\+\_\+buff\+\_\+end}}
+\index{where\+\_\+my\+\_\+buff\+\_\+end@{where\+\_\+my\+\_\+buff\+\_\+end}!get\+\_\+next\+\_\+line.\+c@{get\+\_\+next\+\_\+line.\+c}}
+\subsubsection[{where\+\_\+my\+\_\+buff\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}void where\+\_\+my\+\_\+buff\+\_\+end (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{statbuffer, }
+\item[{char $\ast$}]{stockstat, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{get__next__line_8c_a9bf3a9107dbcf7a29220551c1fdd07ce}
+
+
+Definition at line 15 of file get\+\_\+next\+\_\+line.\+c.
+

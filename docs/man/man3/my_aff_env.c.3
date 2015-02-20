@@ -1,0 +1,46 @@
+.TH "src/my_aff_env.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/my_aff_env.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+\fC#include 'mysh\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmy_aff_env\fP (char **env)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void my_aff_env (char **env)"
+
+.PP
+Definition at line 14 of file my_aff_env\&.c\&.
+.PP
+References my_printf()\&.
+.PP
+Referenced by case_env()\&.
+.PP
+.nf
+15 {
+16   int   i;
+17 
+18   i = 0;
+19   while (env[i] != 0)
+20     {
+21       my_printf("%s\n", env[i]);
+22       ++i;
+23     }
+24 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

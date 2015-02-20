@@ -1,0 +1,167 @@
+.TH "lib/my/src/printf/convert_base_deci_part3.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/convert_base_deci_part3.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmy_rev_unint_tab\fP (unsigned int *tab, int i)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_caract_nimpr\fP (int *tab, int i)"
+.br
+.ti -1c
+.RI "int \fBmy_nb_stack\fP (char n)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_2\fP (int nb)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_octal\fP (char strnb, char *str)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int convert_base_deci_2 (intnb)"
+
+.PP
+Definition at line 48 of file convert_base_deci_part3\&.c\&.
+.PP
+References my_rev_int_tab()\&.
+.PP
+Referenced by case_b()\&.
+.PP
+.nf
+49 {
+50   int   base;
+51   int   res;
+52   int   *tab;
+53   int   i;
+54 
+55   if (nb < 0)
+56     nb = - nb;
+57   tab = malloc(sizeof(*tab) * 16 + 1);
+58   if (tab == NULL)
+59     return (1);
+60   res = 1;
+61   i = 0;
+62   base = 2;
+63   while (res != 0)
+64     {
+65       res = nb / base;
+66       tab[i] = nb % base;
+67       i++;
+68       nb = res;
+69     }
+70   my_rev_int_tab(tab, i);
+71   free(tab);
+72   return (i);
+73 }
+.fi
+.SS "int convert_base_deci_octal (charstrnb, char *str)"
+
+.PP
+Definition at line 75 of file convert_base_deci_part3\&.c\&.
+.PP
+References my_rev_caract_nimpr(), and my_strlen()\&.
+.PP
+Referenced by s_putstr()\&.
+.PP
+.nf
+76 {
+77   int   base;
+78   int   res;
+79   int  *tab;
+80   int   i;
+81   int   nb;
+82 
+83   tab = malloc(sizeof(*tab) * 16 + 1);
+84   if (tab == NULL)
+85     return (1);
+86   nb = strnb;
+87   res = 1;
+88   i = 0;
+89   base = my_strlen(str);
+90   while (res != 0)
+91     {
+92       res = nb / base;
+93       tab[i] = str[nb % base];
+94       i++;
+95       nb = res;
+96     }
+97   tab[i] = '\0';
+98   my_rev_caract_nimpr(tab, i);
+99   free(tab);
+100   return (i);
+101 }
+.fi
+.SS "int my_nb_stack (charn)"
+
+.PP
+Definition at line 39 of file convert_base_deci_part3\&.c\&.
+.PP
+.nf
+40 {
+41   int   nb;
+42 
+43   nb = 0;
+44   nb = nb * 10 + n;
+45   return (nb);
+46 }
+.fi
+.SS "void my_rev_caract_nimpr (int *tab, inti)"
+
+.PP
+Definition at line 24 of file convert_base_deci_part3\&.c\&.
+.PP
+References my_putchar(), and my_putstr()\&.
+.PP
+Referenced by convert_base_deci_octal()\&.
+.PP
+.nf
+25 {
+26   i--;
+27   my_putchar(92);
+28   if (i == 0)
+29     my_putstr("00");
+30   if (i == 1)
+31     my_putchar('0');
+32   while (i >= 0)
+33     {
+34       my_putchar(tab[i]);
+35       i--;
+36     }
+37 }
+.fi
+.SS "void my_rev_unint_tab (unsigned int *tab, inti)"
+
+.PP
+Definition at line 14 of file convert_base_deci_part3\&.c\&.
+.PP
+References my_unputnbr()\&.
+.PP
+Referenced by convert_base_deci_8_unint()\&.
+.PP
+.nf
+15 {
+16   i--;
+17   while (i >= 0)
+18     {
+19       my_unputnbr(tab[i]);
+20       i--;
+21     }
+22 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

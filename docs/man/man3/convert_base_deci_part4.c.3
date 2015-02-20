@@ -1,0 +1,121 @@
+.TH "lib/my/src/printf/convert_base_deci_part4.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/convert_base_deci_part4.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBconvert_base_deci_16_lun\fP (long unsigned int nb, char *str)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_lunint_tab\fP (long unsigned int *tab, int i)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_8_lunint\fP (long unsigned int nb)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int convert_base_deci_16_lun (long unsigned intnb, char *str)"
+
+.PP
+Definition at line 14 of file convert_base_deci_part4\&.c\&.
+.PP
+References my_rev_int_tab_un()\&.
+.PP
+Referenced by case_x(), and x_case()\&.
+.PP
+.nf
+15 {
+16   int           base;
+17   long unsigned int res;
+18   char          *tab;
+19   unsigned int      i;
+20 
+21   tab = malloc(sizeof(*tab) * 20 + 1);
+22   if (tab == NULL)
+23     return (1);
+24   res = 1;
+25   i = 0;
+26   base = 16;
+27   while (res != 0)
+28     {
+29       res = nb / base;
+30       tab[i] = nb % base;
+31       tab[i] = str[nb % base];
+32       i++;
+33       nb = res;
+34     }
+35   tab[i] = '\0';
+36   my_rev_int_tab_un(tab, i);
+37   free(tab);
+38   return (i);
+39 }
+.fi
+.SS "int convert_base_deci_8_lunint (long unsigned intnb)"
+
+.PP
+Definition at line 51 of file convert_base_deci_part4\&.c\&.
+.PP
+References my_rev_lunint_tab()\&.
+.PP
+Referenced by case_o()\&.
+.PP
+.nf
+52 {
+53   int           base;
+54   long unsigned int res;
+55   long unsigned int *tab;
+56   int           i;
+57 
+58   tab = malloc(sizeof(*tab) * 16 + 1);
+59   if (tab == NULL)
+60     return (1);
+61   res = 1;
+62   i = 0;
+63   base = 8;
+64   while (res != 0)
+65     {
+66       res = nb / base;
+67       tab[i] = nb % base;
+68       i++;
+69       nb = res;
+70     }
+71   tab[i] = '\0';
+72   my_rev_lunint_tab(tab, i);
+73   free(tab);
+74   return (i);
+75 }
+.fi
+.SS "void my_rev_lunint_tab (long unsigned int *tab, inti)"
+
+.PP
+Definition at line 41 of file convert_base_deci_part4\&.c\&.
+.PP
+References my_lunputnbr()\&.
+.PP
+Referenced by convert_base_deci_8_lunint()\&.
+.PP
+.nf
+42 {
+43   i--;
+44   while (i >= 0)
+45     {
+46       my_lunputnbr(tab[i]);
+47       i--;
+48     }
+49 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

@@ -1,0 +1,937 @@
+\hypertarget{my_8h}{\section{include/my.h File Reference}
+\label{my_8h}\index{include/my.\+h@{include/my.\+h}}
+}
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for my.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{my_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structs__index}{s\+\_\+index}
+\item 
+struct \hyperlink{structs__struc}{s\+\_\+struc}
+\item 
+struct \hyperlink{structs__win}{s\+\_\+win}
+\item 
+struct \hyperlink{structs__getline}{s\+\_\+getline}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{my_8h_a08b65f6ef2e2a31bf96774acd9a4f923}{S\+I\+Z\+E\+\_\+\+O\+F\+\_\+\+R\+E\+A\+D}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structs__index}{s\+\_\+index} \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index}
+\item 
+typedef struct \hyperlink{structs__struc}{s\+\_\+struc} \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc}
+\item 
+typedef struct \hyperlink{structs__win}{s\+\_\+win} \hyperlink{my_8h_a09c3907d6f69f2c69f28b45122bd6a4a}{t\+\_\+win}
+\item 
+typedef struct \hyperlink{structs__getline}{s\+\_\+getline} \hyperlink{my_8h_a1670174b47ab43c748df989ae9ef5984}{t\+\_\+getline}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{my_8h_abfc16ef2dad9871456d2f218d60291e5}{my\+\_\+strcmp} (char $\ast$a, char $\ast$b)
+\item 
+int \hyperlink{my_8h_ac7e9bd08d068851e31a5b6d408004638}{my\+\_\+strlen} (char $\ast$str)
+\item 
+char $\ast$ \hyperlink{my_8h_ab9c6a1e01382ed13c4e3a38018322282}{my\+\_\+strcpy} (char $\ast$dest, char $\ast$src)
+\item 
+char $\ast$ \hyperlink{my_8h_a4548135c4f1cfcaeff31c8dabb3692d3}{my\+\_\+strdup} (char $\ast$src)
+\item 
+char $\ast$ \hyperlink{my_8h_a2ffadb0b379fb240cf69a6e336ee5877}{get\+\_\+next\+\_\+line} (const int fd)
+\item 
+char $\ast$$\ast$ \hyperlink{my_8h_a80c1db0a8b97ae605ef990e4ab025abd}{my\+\_\+spe\+\_\+in\+\_\+tab} (char $\ast$str, char sep)
+\item 
+int \hyperlink{my_8h_a4f5b9ec850d1c83fd70299ebc2589700}{my\+\_\+strncmp} (char $\ast$a, char $\ast$b, int nb)
+\item 
+void \hyperlink{my_8h_a1290d1e8d903e883482237b8446243dc}{my\+\_\+putnstr} (char $\ast$str, int nb)
+\item 
+char $\ast$ \hyperlink{my_8h_aa470a7e58967778144f7d737bf64c3e8}{my\+\_\+strndup} (char $\ast$src, int nb)
+\item 
+char $\ast$ \hyperlink{my_8h_a975053956fdec1e94d9c3764d4e15367}{my\+\_\+strncpy} (char $\ast$dest, char $\ast$src, int nb)
+\item 
+char $\ast$ \hyperlink{my_8h_a04349ba349d2ec7aece9350d01b1eaf1}{my\+\_\+strnsdup} (char $\ast$src, int nb)
+\item 
+char $\ast$ \hyperlink{my_8h_a649bba7162650b9189f3051c74545b3a}{my\+\_\+strnscpy} (char $\ast$dest, char $\ast$src, int nb)
+\item 
+void \hyperlink{my_8h_ae07e4d968ee702cb282f6d1235fdecff}{remove\+\_\+str\+\_\+in\+\_\+tab} (char $\ast$$\ast$tab, int x)
+\item 
+int \hyperlink{my_8h_a1d2d0c1f7e29f013e2bfb4ecece00811}{my\+\_\+tablen} (char $\ast$$\ast$tab)
+\item 
+int \hyperlink{my_8h_a0fc216c55eb7277a61f446154aa01017}{my\+\_\+strglen} (long $\ast$a)
+\item 
+int \hyperlink{my_8h_a8ed3cc79947555e7d13c91bbba84c558}{my\+\_\+printf} (const char $\ast$format,...)
+\item 
+void \hyperlink{my_8h_ac4de74d04dc6e263345755eb62676802}{my\+\_\+putchar} (char c)
+\item 
+int \hyperlink{my_8h_ac7b78302eb76af4307b2d02f98bd75cb}{my\+\_\+putstr} (char $\ast$str)
+\item 
+int \hyperlink{my_8h_abe11475be3e899d09dd96ff87e27ea33}{my\+\_\+putnbr} (int nb)
+\item 
+int \hyperlink{my_8h_a0e2a140625b831447e32a892878b72d7}{my\+\_\+unputnbr} (unsigned int nb)
+\item 
+int \hyperlink{my_8h_aa6df05dfcbd54dc062af6e56215f656f}{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+long} (char $\ast$tab, long i)
+\item 
+void \hyperlink{my_8h_ab228b9450ae618a46ca62d2b1809574f}{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+un} (char $\ast$tab, long i)
+\item 
+void \hyperlink{my_8h_a19c537e65b212d78f6088c53687fa546}{my\+\_\+rev\+\_\+int\+\_\+tab} (int $\ast$tab, int i)
+\item 
+void \hyperlink{my_8h_a1d732a4c44f1469c1fb09eab715773ec}{my\+\_\+rev\+\_\+unint\+\_\+tab} (unsigned int $\ast$tab, int i)
+\item 
+void \hyperlink{my_8h_afc785712bfc7354145b34cfbc3a33631}{my\+\_\+rev\+\_\+caract\+\_\+nimpr} (int $\ast$tab, int i)
+\item 
+int \hyperlink{my_8h_ae2b287f062dad36586145d292b4dbf43}{my\+\_\+nb\+\_\+stack} (char n)
+\item 
+int \hyperlink{my_8h_a44553866ba5bbfc0334e46e5fb65824e}{convert\+\_\+base\+\_\+deci\+\_\+2} (int nb)
+\item 
+int \hyperlink{my_8h_a60ce8511bf4c820f8b97e85f7217c732}{convert\+\_\+base\+\_\+deci\+\_\+octal} (char strnb, char $\ast$str)
+\item 
+int \hyperlink{my_8h_adea09e51c1d16f60e2b8b0e82dabc36a}{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+unint} (unsigned int nb)
+\item 
+int \hyperlink{my_8h_a8ef7b5028c3c516852da8e8d3bd8f3ab}{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+un} (unsigned int nb, char $\ast$str)
+\item 
+int \hyperlink{my_8h_ae76792ea9d72b89dd22b63818937cf6f}{convert\+\_\+base\+\_\+deci\+\_\+16} (long nb, char $\ast$str)
+\item 
+int \hyperlink{my_8h_a210d12a636371bbb0f25115451e88ea6}{s\+\_\+putstr} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a2ca0365009481f7563e0f8c08cf0e0c9}{case\+\_\+p} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a500cb9fd540fc8337d1bdebb9df56439}{case\+\_\+x} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a3535db665dd6c72c791567112877de4a}{case\+\_\+c} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a91c72293ad0ca640b91b6178fed1ebb2}{case\+\_\+s} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a68fff7b819caa6ed822d928e544b294c}{case\+\_\+b} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_af87d61ca079d23141a1d403abdb3bd2d}{case\+\_\+di} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a752193ef66373cc419bfabdcc7850b49}{case\+\_\+o} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a4333d447daeb94aa2c59468dd2dee929}{x\+\_\+case} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_ae7a0d4d53622aae2844818b9b55c6a48}{case\+\_\+u} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a83a21528a9e6f2461dba942d6892c1a8}{case\+\_\+pres} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_abaafbf096a795ff378896ed44c85bf0e}{case\+\_\+sharp} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_ab13cbc229e8177d316dd3d9d88cdb567}{case\+\_\+sharp2} (\hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, int i, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a013d463656e55e0618a6e1f4d937168a}{case\+\_\+zero} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a4a032b76fd1462824c8617c00826036e}{my\+\_\+putnbrnoaffich} (int nb)
+\item 
+int \hyperlink{my_8h_a79d3de06392038b9372c01e0114614a0}{my\+\_\+putnbrs} (int nb, int p, int nbr)
+\item 
+int \hyperlink{my_8h_ab0e9c74dd440e1a52cb7f52fdb13c09c}{my\+\_\+unputnbrnoaffich} (unsigned int nb)
+\item 
+int \hyperlink{my_8h_a9bbf186c3c7f01218fad6ee69cef6b2d}{my\+\_\+unputnbrs} (unsigned int nb, int p, int nbr)
+\item 
+int \hyperlink{my_8h_a4861f05079aaf8e8313344b16751a0a6}{case\+\_\+l} (void $\ast$argv, \hyperlink{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{t\+\_\+index} $\ast$s, const char $\ast$format, const \hyperlink{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{t\+\_\+struc} $\ast$tab)
+\item 
+int \hyperlink{my_8h_a536c564648bff72a124a93f152da14c3}{my\+\_\+lunputnbr} (long unsigned int nb)
+\item 
+int \hyperlink{my_8h_a4ea08d997ed58989dca897fefff685dd}{my\+\_\+lputnbr} (long int nb)
+\item 
+int \hyperlink{my_8h_aceed4b7866a7db390bbc5f95524ebbef}{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+lun} (long unsigned int nb, char $\ast$str)
+\item 
+void \hyperlink{my_8h_aaba0b1edc5014a1d679a115792fc3056}{my\+\_\+rev\+\_\+lunint\+\_\+tab} (long unsigned int $\ast$tab, int i)
+\item 
+int \hyperlink{my_8h_ab1108b223543db15017e7cec0e108b12}{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+lunint} (long unsigned int nb)
+\item 
+char $\ast$$\ast$ \hyperlink{my_8h_a7c85d790d5958ef6b7e880acd800fc4f}{my\+\_\+word\+\_\+in\+\_\+tab} (char $\ast$str)
+\item 
+char $\ast$ \hyperlink{my_8h_add69ea0bdb5fbac8c2bc24631c17cb26}{getbuffer} (char $\ast$buffer, char $\ast$retbuffer)
+\item 
+char $\ast$ \hyperlink{my_8h_a63c4dde944ff2968597443eaf08c9bc6}{stat\+\_\+in\+\_\+buff} (char $\ast$strtbuffer, char $\ast$buffer, \hyperlink{my_8h_a1670174b47ab43c748df989ae9ef5984}{t\+\_\+getline} $\ast$s, char $\ast$dest)
+\item 
+void \hyperlink{my_8h_a9bf3a9107dbcf7a29220551c1fdd07ce}{where\+\_\+my\+\_\+buff\+\_\+end} (char $\ast$statbuffer, char $\ast$stockstat, int j)
+\item 
+void \hyperlink{my_8h_a922043af008f3521c98c490bfb92b0b7}{my\+\_\+gstrcpy} (char $\ast$buffer, char $\ast$stockstat, \hyperlink{my_8h_a1670174b47ab43c748df989ae9ef5984}{t\+\_\+getline} $\ast$s, char $\ast$dest)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{my_8h_a08b65f6ef2e2a31bf96774acd9a4f923}{\index{my.\+h@{my.\+h}!S\+I\+Z\+E\+\_\+\+O\+F\+\_\+\+R\+E\+A\+D@{S\+I\+Z\+E\+\_\+\+O\+F\+\_\+\+R\+E\+A\+D}}
+\index{S\+I\+Z\+E\+\_\+\+O\+F\+\_\+\+R\+E\+A\+D@{S\+I\+Z\+E\+\_\+\+O\+F\+\_\+\+R\+E\+A\+D}!my.\+h@{my.\+h}}
+\subsubsection[{S\+I\+Z\+E\+\_\+\+O\+F\+\_\+\+R\+E\+A\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+Z\+E\+\_\+\+O\+F\+\_\+\+R\+E\+A\+D~1}}\label{my_8h_a08b65f6ef2e2a31bf96774acd9a4f923}
+
+
+Definition at line 155 of file my.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{my_8h_a1670174b47ab43c748df989ae9ef5984}{\index{my.\+h@{my.\+h}!t\+\_\+getline@{t\+\_\+getline}}
+\index{t\+\_\+getline@{t\+\_\+getline}!my.\+h@{my.\+h}}
+\subsubsection[{t\+\_\+getline}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf s\+\_\+getline}		 {\bf t\+\_\+getline}}}\label{my_8h_a1670174b47ab43c748df989ae9ef5984}
+\hypertarget{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}{\index{my.\+h@{my.\+h}!t\+\_\+index@{t\+\_\+index}}
+\index{t\+\_\+index@{t\+\_\+index}!my.\+h@{my.\+h}}
+\subsubsection[{t\+\_\+index}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf s\+\_\+index}			 {\bf t\+\_\+index}}}\label{my_8h_a648ad484eb5d7e8f5d781c45b20f874f}
+\hypertarget{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}{\index{my.\+h@{my.\+h}!t\+\_\+struc@{t\+\_\+struc}}
+\index{t\+\_\+struc@{t\+\_\+struc}!my.\+h@{my.\+h}}
+\subsubsection[{t\+\_\+struc}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf s\+\_\+struc}			 {\bf t\+\_\+struc}}}\label{my_8h_ac25c8b585b5df2bbafd4bdceafa17eb4}
+\hypertarget{my_8h_a09c3907d6f69f2c69f28b45122bd6a4a}{\index{my.\+h@{my.\+h}!t\+\_\+win@{t\+\_\+win}}
+\index{t\+\_\+win@{t\+\_\+win}!my.\+h@{my.\+h}}
+\subsubsection[{t\+\_\+win}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf s\+\_\+win}		 {\bf t\+\_\+win}}}\label{my_8h_a09c3907d6f69f2c69f28b45122bd6a4a}
+
+
+\subsection{Function Documentation}
+\hypertarget{my_8h_a68fff7b819caa6ed822d928e544b294c}{\index{my.\+h@{my.\+h}!case\+\_\+b@{case\+\_\+b}}
+\index{case\+\_\+b@{case\+\_\+b}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+b}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+b (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a68fff7b819caa6ed822d928e544b294c}
+
+
+Definition at line 13 of file case\+\_\+printf\+\_\+nb.\+c.
+
+\hypertarget{my_8h_a3535db665dd6c72c791567112877de4a}{\index{my.\+h@{my.\+h}!case\+\_\+c@{case\+\_\+c}}
+\index{case\+\_\+c@{case\+\_\+c}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+c}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+c (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a3535db665dd6c72c791567112877de4a}
+
+
+Definition at line 66 of file case\+\_\+printf\+\_\+aff.\+c.
+
+\hypertarget{my_8h_af87d61ca079d23141a1d403abdb3bd2d}{\index{my.\+h@{my.\+h}!case\+\_\+di@{case\+\_\+di}}
+\index{case\+\_\+di@{case\+\_\+di}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+di}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+di (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_af87d61ca079d23141a1d403abdb3bd2d}
+
+
+Definition at line 27 of file case\+\_\+printf\+\_\+nb.\+c.
+
+\hypertarget{my_8h_a4861f05079aaf8e8313344b16751a0a6}{\index{my.\+h@{my.\+h}!case\+\_\+l@{case\+\_\+l}}
+\index{case\+\_\+l@{case\+\_\+l}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+l}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+l (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a4861f05079aaf8e8313344b16751a0a6}
+
+
+Definition at line 13 of file case\+\_\+l.\+c.
+
+\hypertarget{my_8h_a752193ef66373cc419bfabdcc7850b49}{\index{my.\+h@{my.\+h}!case\+\_\+o@{case\+\_\+o}}
+\index{case\+\_\+o@{case\+\_\+o}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+o}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+o (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a752193ef66373cc419bfabdcc7850b49}
+
+
+Definition at line 44 of file case\+\_\+printf\+\_\+nb.\+c.
+
+\hypertarget{my_8h_a2ca0365009481f7563e0f8c08cf0e0c9}{\index{my.\+h@{my.\+h}!case\+\_\+p@{case\+\_\+p}}
+\index{case\+\_\+p@{case\+\_\+p}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+p}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+p (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a2ca0365009481f7563e0f8c08cf0e0c9}
+
+
+Definition at line 35 of file case\+\_\+printf\+\_\+aff.\+c.
+
+\hypertarget{my_8h_a83a21528a9e6f2461dba942d6892c1a8}{\index{my.\+h@{my.\+h}!case\+\_\+pres@{case\+\_\+pres}}
+\index{case\+\_\+pres@{case\+\_\+pres}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+pres}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+pres (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a83a21528a9e6f2461dba942d6892c1a8}
+
+
+Definition at line 13 of file case\+\_\+printf\+\_\+convert.\+c.
+
+\hypertarget{my_8h_a91c72293ad0ca640b91b6178fed1ebb2}{\index{my.\+h@{my.\+h}!case\+\_\+s@{case\+\_\+s}}
+\index{case\+\_\+s@{case\+\_\+s}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+s}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+s (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a91c72293ad0ca640b91b6178fed1ebb2}
+
+
+Definition at line 79 of file case\+\_\+printf\+\_\+aff.\+c.
+
+\hypertarget{my_8h_abaafbf096a795ff378896ed44c85bf0e}{\index{my.\+h@{my.\+h}!case\+\_\+sharp@{case\+\_\+sharp}}
+\index{case\+\_\+sharp@{case\+\_\+sharp}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+sharp}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+sharp (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_abaafbf096a795ff378896ed44c85bf0e}
+
+
+Definition at line 42 of file case\+\_\+printf\+\_\+convert.\+c.
+
+\hypertarget{my_8h_ab13cbc229e8177d316dd3d9d88cdb567}{\index{my.\+h@{my.\+h}!case\+\_\+sharp2@{case\+\_\+sharp2}}
+\index{case\+\_\+sharp2@{case\+\_\+sharp2}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+sharp2}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+sharp2 (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{int}]{i, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ab13cbc229e8177d316dd3d9d88cdb567}
+
+
+Definition at line 24 of file case\+\_\+printf\+\_\+convert.\+c.
+
+\hypertarget{my_8h_ae7a0d4d53622aae2844818b9b55c6a48}{\index{my.\+h@{my.\+h}!case\+\_\+u@{case\+\_\+u}}
+\index{case\+\_\+u@{case\+\_\+u}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+u}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+u (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ae7a0d4d53622aae2844818b9b55c6a48}
+
+
+Definition at line 79 of file case\+\_\+printf\+\_\+nb.\+c.
+
+\hypertarget{my_8h_a500cb9fd540fc8337d1bdebb9df56439}{\index{my.\+h@{my.\+h}!case\+\_\+x@{case\+\_\+x}}
+\index{case\+\_\+x@{case\+\_\+x}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+x}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a500cb9fd540fc8337d1bdebb9df56439}
+
+
+Definition at line 49 of file case\+\_\+printf\+\_\+aff.\+c.
+
+\hypertarget{my_8h_a013d463656e55e0618a6e1f4d937168a}{\index{my.\+h@{my.\+h}!case\+\_\+zero@{case\+\_\+zero}}
+\index{case\+\_\+zero@{case\+\_\+zero}!my.\+h@{my.\+h}}
+\subsubsection[{case\+\_\+zero}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+zero (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a013d463656e55e0618a6e1f4d937168a}
+
+
+Definition at line 63 of file case\+\_\+printf\+\_\+convert.\+c.
+
+\hypertarget{my_8h_ae76792ea9d72b89dd22b63818937cf6f}{\index{my.\+h@{my.\+h}!convert\+\_\+base\+\_\+deci\+\_\+16@{convert\+\_\+base\+\_\+deci\+\_\+16}}
+\index{convert\+\_\+base\+\_\+deci\+\_\+16@{convert\+\_\+base\+\_\+deci\+\_\+16}!my.\+h@{my.\+h}}
+\subsubsection[{convert\+\_\+base\+\_\+deci\+\_\+16}]{\setlength{\rightskip}{0pt plus 5cm}int convert\+\_\+base\+\_\+deci\+\_\+16 (
+\begin{DoxyParamCaption}
+\item[{long}]{nb, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ae76792ea9d72b89dd22b63818937cf6f}
+
+
+Definition at line 67 of file convert\+\_\+base\+\_\+deci.\+c.
+
+\hypertarget{my_8h_aceed4b7866a7db390bbc5f95524ebbef}{\index{my.\+h@{my.\+h}!convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+lun@{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+lun}}
+\index{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+lun@{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+lun}!my.\+h@{my.\+h}}
+\subsubsection[{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+lun}]{\setlength{\rightskip}{0pt plus 5cm}int convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+lun (
+\begin{DoxyParamCaption}
+\item[{long unsigned int}]{nb, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{my_8h_aceed4b7866a7db390bbc5f95524ebbef}
+
+
+Definition at line 14 of file convert\+\_\+base\+\_\+unsigned.\+c.
+
+\hypertarget{my_8h_a8ef7b5028c3c516852da8e8d3bd8f3ab}{\index{my.\+h@{my.\+h}!convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+un@{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+un}}
+\index{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+un@{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+un}!my.\+h@{my.\+h}}
+\subsubsection[{convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+un}]{\setlength{\rightskip}{0pt plus 5cm}int convert\+\_\+base\+\_\+deci\+\_\+16\+\_\+un (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{nb, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a8ef7b5028c3c516852da8e8d3bd8f3ab}
+
+
+Definition at line 40 of file convert\+\_\+base\+\_\+deci.\+c.
+
+\hypertarget{my_8h_a44553866ba5bbfc0334e46e5fb65824e}{\index{my.\+h@{my.\+h}!convert\+\_\+base\+\_\+deci\+\_\+2@{convert\+\_\+base\+\_\+deci\+\_\+2}}
+\index{convert\+\_\+base\+\_\+deci\+\_\+2@{convert\+\_\+base\+\_\+deci\+\_\+2}!my.\+h@{my.\+h}}
+\subsubsection[{convert\+\_\+base\+\_\+deci\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}int convert\+\_\+base\+\_\+deci\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a44553866ba5bbfc0334e46e5fb65824e}
+
+
+Definition at line 48 of file convert\+\_\+base\+\_\+8.\+c.
+
+\hypertarget{my_8h_ab1108b223543db15017e7cec0e108b12}{\index{my.\+h@{my.\+h}!convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+lunint@{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+lunint}}
+\index{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+lunint@{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+lunint}!my.\+h@{my.\+h}}
+\subsubsection[{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+lunint}]{\setlength{\rightskip}{0pt plus 5cm}int convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+lunint (
+\begin{DoxyParamCaption}
+\item[{long unsigned int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ab1108b223543db15017e7cec0e108b12}
+
+
+Definition at line 51 of file convert\+\_\+base\+\_\+unsigned.\+c.
+
+\hypertarget{my_8h_adea09e51c1d16f60e2b8b0e82dabc36a}{\index{my.\+h@{my.\+h}!convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+unint@{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+unint}}
+\index{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+unint@{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+unint}!my.\+h@{my.\+h}}
+\subsubsection[{convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+unint}]{\setlength{\rightskip}{0pt plus 5cm}int convert\+\_\+base\+\_\+deci\+\_\+8\+\_\+unint (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_adea09e51c1d16f60e2b8b0e82dabc36a}
+
+
+Definition at line 14 of file convert\+\_\+base\+\_\+deci.\+c.
+
+\hypertarget{my_8h_a60ce8511bf4c820f8b97e85f7217c732}{\index{my.\+h@{my.\+h}!convert\+\_\+base\+\_\+deci\+\_\+octal@{convert\+\_\+base\+\_\+deci\+\_\+octal}}
+\index{convert\+\_\+base\+\_\+deci\+\_\+octal@{convert\+\_\+base\+\_\+deci\+\_\+octal}!my.\+h@{my.\+h}}
+\subsubsection[{convert\+\_\+base\+\_\+deci\+\_\+octal}]{\setlength{\rightskip}{0pt plus 5cm}int convert\+\_\+base\+\_\+deci\+\_\+octal (
+\begin{DoxyParamCaption}
+\item[{char}]{strnb, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a60ce8511bf4c820f8b97e85f7217c732}
+
+
+Definition at line 75 of file convert\+\_\+base\+\_\+8.\+c.
+
+\hypertarget{my_8h_a2ffadb0b379fb240cf69a6e336ee5877}{\index{my.\+h@{my.\+h}!get\+\_\+next\+\_\+line@{get\+\_\+next\+\_\+line}}
+\index{get\+\_\+next\+\_\+line@{get\+\_\+next\+\_\+line}!my.\+h@{my.\+h}}
+\subsubsection[{get\+\_\+next\+\_\+line}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ get\+\_\+next\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{const int}]{fd}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a2ffadb0b379fb240cf69a6e336ee5877}
+
+
+Definition at line 81 of file get\+\_\+next\+\_\+line.\+c.
+
+\hypertarget{my_8h_add69ea0bdb5fbac8c2bc24631c17cb26}{\index{my.\+h@{my.\+h}!getbuffer@{getbuffer}}
+\index{getbuffer@{getbuffer}!my.\+h@{my.\+h}}
+\subsubsection[{getbuffer}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ getbuffer (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{char $\ast$}]{retbuffer}
+\end{DoxyParamCaption}
+)}}\label{my_8h_add69ea0bdb5fbac8c2bc24631c17cb26}
+\hypertarget{my_8h_a922043af008f3521c98c490bfb92b0b7}{\index{my.\+h@{my.\+h}!my\+\_\+gstrcpy@{my\+\_\+gstrcpy}}
+\index{my\+\_\+gstrcpy@{my\+\_\+gstrcpy}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+gstrcpy}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+gstrcpy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{char $\ast$}]{stockstat, }
+\item[{{\bf t\+\_\+getline} $\ast$}]{s, }
+\item[{char $\ast$}]{dest}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a922043af008f3521c98c490bfb92b0b7}
+
+
+Definition at line 29 of file get\+\_\+next\+\_\+line.\+c.
+
+\hypertarget{my_8h_a4ea08d997ed58989dca897fefff685dd}{\index{my.\+h@{my.\+h}!my\+\_\+lputnbr@{my\+\_\+lputnbr}}
+\index{my\+\_\+lputnbr@{my\+\_\+lputnbr}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+lputnbr}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+lputnbr (
+\begin{DoxyParamCaption}
+\item[{long int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a4ea08d997ed58989dca897fefff685dd}
+
+
+Definition at line 77 of file my\+\_\+unputnbr.\+c.
+
+\hypertarget{my_8h_a536c564648bff72a124a93f152da14c3}{\index{my.\+h@{my.\+h}!my\+\_\+lunputnbr@{my\+\_\+lunputnbr}}
+\index{my\+\_\+lunputnbr@{my\+\_\+lunputnbr}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+lunputnbr}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+lunputnbr (
+\begin{DoxyParamCaption}
+\item[{long unsigned int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a536c564648bff72a124a93f152da14c3}
+
+
+Definition at line 91 of file my\+\_\+putnbr.\+c.
+
+\hypertarget{my_8h_ae2b287f062dad36586145d292b4dbf43}{\index{my.\+h@{my.\+h}!my\+\_\+nb\+\_\+stack@{my\+\_\+nb\+\_\+stack}}
+\index{my\+\_\+nb\+\_\+stack@{my\+\_\+nb\+\_\+stack}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+nb\+\_\+stack}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+nb\+\_\+stack (
+\begin{DoxyParamCaption}
+\item[{char}]{n}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ae2b287f062dad36586145d292b4dbf43}
+
+
+Definition at line 39 of file convert\+\_\+base\+\_\+8.\+c.
+
+\hypertarget{my_8h_a8ed3cc79947555e7d13c91bbba84c558}{\index{my.\+h@{my.\+h}!my\+\_\+printf@{my\+\_\+printf}}
+\index{my\+\_\+printf@{my\+\_\+printf}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+printf}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+printf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a8ed3cc79947555e7d13c91bbba84c558}
+
+
+Definition at line 57 of file my\+\_\+printf.\+c.
+
+\hypertarget{my_8h_ac4de74d04dc6e263345755eb62676802}{\index{my.\+h@{my.\+h}!my\+\_\+putchar@{my\+\_\+putchar}}
+\index{my\+\_\+putchar@{my\+\_\+putchar}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+putchar}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+putchar (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ac4de74d04dc6e263345755eb62676802}
+
+
+Definition at line 15 of file my\+\_\+putchar.\+c.
+
+\hypertarget{my_8h_abe11475be3e899d09dd96ff87e27ea33}{\index{my.\+h@{my.\+h}!my\+\_\+putnbr@{my\+\_\+putnbr}}
+\index{my\+\_\+putnbr@{my\+\_\+putnbr}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+putnbr}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+putnbr (
+\begin{DoxyParamCaption}
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_abe11475be3e899d09dd96ff87e27ea33}
+
+
+Definition at line 13 of file my\+\_\+putnbr.\+c.
+
+\hypertarget{my_8h_a4a032b76fd1462824c8617c00826036e}{\index{my.\+h@{my.\+h}!my\+\_\+putnbrnoaffich@{my\+\_\+putnbrnoaffich}}
+\index{my\+\_\+putnbrnoaffich@{my\+\_\+putnbrnoaffich}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+putnbrnoaffich}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+putnbrnoaffich (
+\begin{DoxyParamCaption}
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a4a032b76fd1462824c8617c00826036e}
+
+
+Definition at line 41 of file my\+\_\+putnbr.\+c.
+
+\hypertarget{my_8h_a79d3de06392038b9372c01e0114614a0}{\index{my.\+h@{my.\+h}!my\+\_\+putnbrs@{my\+\_\+putnbrs}}
+\index{my\+\_\+putnbrs@{my\+\_\+putnbrs}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+putnbrs}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+putnbrs (
+\begin{DoxyParamCaption}
+\item[{int}]{nb, }
+\item[{int}]{p, }
+\item[{int}]{nbr}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a79d3de06392038b9372c01e0114614a0}
+
+
+Definition at line 65 of file my\+\_\+putnbr.\+c.
+
+\hypertarget{my_8h_a1290d1e8d903e883482237b8446243dc}{\index{my.\+h@{my.\+h}!my\+\_\+putnstr@{my\+\_\+putnstr}}
+\index{my\+\_\+putnstr@{my\+\_\+putnstr}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+putnstr}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+putnstr (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a1290d1e8d903e883482237b8446243dc}
+
+
+Definition at line 13 of file my\+\_\+putnstr.\+c.
+
+\hypertarget{my_8h_ac7b78302eb76af4307b2d02f98bd75cb}{\index{my.\+h@{my.\+h}!my\+\_\+putstr@{my\+\_\+putstr}}
+\index{my\+\_\+putstr@{my\+\_\+putstr}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+putstr}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+putstr (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ac7b78302eb76af4307b2d02f98bd75cb}
+
+
+Definition at line 13 of file my\+\_\+putstr.\+c.
+
+\hypertarget{my_8h_afc785712bfc7354145b34cfbc3a33631}{\index{my.\+h@{my.\+h}!my\+\_\+rev\+\_\+caract\+\_\+nimpr@{my\+\_\+rev\+\_\+caract\+\_\+nimpr}}
+\index{my\+\_\+rev\+\_\+caract\+\_\+nimpr@{my\+\_\+rev\+\_\+caract\+\_\+nimpr}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+rev\+\_\+caract\+\_\+nimpr}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+rev\+\_\+caract\+\_\+nimpr (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{tab, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{my_8h_afc785712bfc7354145b34cfbc3a33631}
+
+
+Definition at line 24 of file convert\+\_\+base\+\_\+8.\+c.
+
+\hypertarget{my_8h_a19c537e65b212d78f6088c53687fa546}{\index{my.\+h@{my.\+h}!my\+\_\+rev\+\_\+int\+\_\+tab@{my\+\_\+rev\+\_\+int\+\_\+tab}}
+\index{my\+\_\+rev\+\_\+int\+\_\+tab@{my\+\_\+rev\+\_\+int\+\_\+tab}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+rev\+\_\+int\+\_\+tab}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+rev\+\_\+int\+\_\+tab (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{tab, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a19c537e65b212d78f6088c53687fa546}
+
+
+Definition at line 54 of file convert\+\_\+base\+\_\+16.\+c.
+
+\hypertarget{my_8h_aa6df05dfcbd54dc062af6e56215f656f}{\index{my.\+h@{my.\+h}!my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+long@{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+long}}
+\index{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+long@{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+long}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+long}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+long (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tab, }
+\item[{long}]{i}
+\end{DoxyParamCaption}
+)}}\label{my_8h_aa6df05dfcbd54dc062af6e56215f656f}
+
+
+Definition at line 23 of file convert\+\_\+base\+\_\+16.\+c.
+
+\hypertarget{my_8h_ab228b9450ae618a46ca62d2b1809574f}{\index{my.\+h@{my.\+h}!my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+un@{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+un}}
+\index{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+un@{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+un}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+un}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+rev\+\_\+int\+\_\+tab\+\_\+un (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tab, }
+\item[{long}]{i}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ab228b9450ae618a46ca62d2b1809574f}
+
+
+Definition at line 44 of file convert\+\_\+base\+\_\+16.\+c.
+
+\hypertarget{my_8h_aaba0b1edc5014a1d679a115792fc3056}{\index{my.\+h@{my.\+h}!my\+\_\+rev\+\_\+lunint\+\_\+tab@{my\+\_\+rev\+\_\+lunint\+\_\+tab}}
+\index{my\+\_\+rev\+\_\+lunint\+\_\+tab@{my\+\_\+rev\+\_\+lunint\+\_\+tab}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+rev\+\_\+lunint\+\_\+tab}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+rev\+\_\+lunint\+\_\+tab (
+\begin{DoxyParamCaption}
+\item[{long unsigned int $\ast$}]{tab, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{my_8h_aaba0b1edc5014a1d679a115792fc3056}
+
+
+Definition at line 41 of file convert\+\_\+base\+\_\+unsigned.\+c.
+
+\hypertarget{my_8h_a1d732a4c44f1469c1fb09eab715773ec}{\index{my.\+h@{my.\+h}!my\+\_\+rev\+\_\+unint\+\_\+tab@{my\+\_\+rev\+\_\+unint\+\_\+tab}}
+\index{my\+\_\+rev\+\_\+unint\+\_\+tab@{my\+\_\+rev\+\_\+unint\+\_\+tab}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+rev\+\_\+unint\+\_\+tab}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+rev\+\_\+unint\+\_\+tab (
+\begin{DoxyParamCaption}
+\item[{unsigned int $\ast$}]{tab, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a1d732a4c44f1469c1fb09eab715773ec}
+
+
+Definition at line 14 of file convert\+\_\+base\+\_\+8.\+c.
+
+\hypertarget{my_8h_a80c1db0a8b97ae605ef990e4ab025abd}{\index{my.\+h@{my.\+h}!my\+\_\+spe\+\_\+in\+\_\+tab@{my\+\_\+spe\+\_\+in\+\_\+tab}}
+\index{my\+\_\+spe\+\_\+in\+\_\+tab@{my\+\_\+spe\+\_\+in\+\_\+tab}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+spe\+\_\+in\+\_\+tab}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ my\+\_\+spe\+\_\+in\+\_\+tab (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char}]{sep}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a80c1db0a8b97ae605ef990e4ab025abd}
+
+
+Definition at line 83 of file my\+\_\+spe\+\_\+in\+\_\+tab.\+c.
+
+\hypertarget{my_8h_abfc16ef2dad9871456d2f218d60291e5}{\index{my.\+h@{my.\+h}!my\+\_\+strcmp@{my\+\_\+strcmp}}
+\index{my\+\_\+strcmp@{my\+\_\+strcmp}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strcmp}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+strcmp (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{a, }
+\item[{char $\ast$}]{b}
+\end{DoxyParamCaption}
+)}}\label{my_8h_abfc16ef2dad9871456d2f218d60291e5}
+
+
+Definition at line 13 of file my\+\_\+strcmp.\+c.
+
+\hypertarget{my_8h_ab9c6a1e01382ed13c4e3a38018322282}{\index{my.\+h@{my.\+h}!my\+\_\+strcpy@{my\+\_\+strcpy}}
+\index{my\+\_\+strcpy@{my\+\_\+strcpy}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strcpy}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ my\+\_\+strcpy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dest, }
+\item[{char $\ast$}]{src}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ab9c6a1e01382ed13c4e3a38018322282}
+
+
+Definition at line 13 of file my\+\_\+strcpy.\+c.
+
+\hypertarget{my_8h_a4548135c4f1cfcaeff31c8dabb3692d3}{\index{my.\+h@{my.\+h}!my\+\_\+strdup@{my\+\_\+strdup}}
+\index{my\+\_\+strdup@{my\+\_\+strdup}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strdup}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ my\+\_\+strdup (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{src}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a4548135c4f1cfcaeff31c8dabb3692d3}
+
+
+Definition at line 14 of file my\+\_\+strdup.\+c.
+
+\hypertarget{my_8h_a0fc216c55eb7277a61f446154aa01017}{\index{my.\+h@{my.\+h}!my\+\_\+strglen@{my\+\_\+strglen}}
+\index{my\+\_\+strglen@{my\+\_\+strglen}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strglen}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+strglen (
+\begin{DoxyParamCaption}
+\item[{long $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a0fc216c55eb7277a61f446154aa01017}
+
+
+Definition at line 13 of file my\+\_\+strglen.\+c.
+
+\hypertarget{my_8h_ac7e9bd08d068851e31a5b6d408004638}{\index{my.\+h@{my.\+h}!my\+\_\+strlen@{my\+\_\+strlen}}
+\index{my\+\_\+strlen@{my\+\_\+strlen}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strlen}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+strlen (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ac7e9bd08d068851e31a5b6d408004638}
+
+
+Definition at line 13 of file convert\+\_\+base\+\_\+16.\+c.
+
+\hypertarget{my_8h_a4f5b9ec850d1c83fd70299ebc2589700}{\index{my.\+h@{my.\+h}!my\+\_\+strncmp@{my\+\_\+strncmp}}
+\index{my\+\_\+strncmp@{my\+\_\+strncmp}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strncmp}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+strncmp (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{a, }
+\item[{char $\ast$}]{b, }
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a4f5b9ec850d1c83fd70299ebc2589700}
+
+
+Definition at line 11 of file my\+\_\+strncmp.\+c.
+
+\hypertarget{my_8h_a975053956fdec1e94d9c3764d4e15367}{\index{my.\+h@{my.\+h}!my\+\_\+strncpy@{my\+\_\+strncpy}}
+\index{my\+\_\+strncpy@{my\+\_\+strncpy}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strncpy}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ my\+\_\+strncpy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dest, }
+\item[{char $\ast$}]{src, }
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a975053956fdec1e94d9c3764d4e15367}
+
+
+Definition at line 13 of file my\+\_\+strncpy.\+c.
+
+\hypertarget{my_8h_aa470a7e58967778144f7d737bf64c3e8}{\index{my.\+h@{my.\+h}!my\+\_\+strndup@{my\+\_\+strndup}}
+\index{my\+\_\+strndup@{my\+\_\+strndup}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strndup}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ my\+\_\+strndup (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{src, }
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_aa470a7e58967778144f7d737bf64c3e8}
+
+
+Definition at line 14 of file my\+\_\+strndup.\+c.
+
+\hypertarget{my_8h_a649bba7162650b9189f3051c74545b3a}{\index{my.\+h@{my.\+h}!my\+\_\+strnscpy@{my\+\_\+strnscpy}}
+\index{my\+\_\+strnscpy@{my\+\_\+strnscpy}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strnscpy}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ my\+\_\+strnscpy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dest, }
+\item[{char $\ast$}]{src, }
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a649bba7162650b9189f3051c74545b3a}
+
+
+Definition at line 13 of file my\+\_\+strnscpy.\+c.
+
+\hypertarget{my_8h_a04349ba349d2ec7aece9350d01b1eaf1}{\index{my.\+h@{my.\+h}!my\+\_\+strnsdup@{my\+\_\+strnsdup}}
+\index{my\+\_\+strnsdup@{my\+\_\+strnsdup}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+strnsdup}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ my\+\_\+strnsdup (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{src, }
+\item[{int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a04349ba349d2ec7aece9350d01b1eaf1}
+
+
+Definition at line 14 of file my\+\_\+strnsdup.\+c.
+
+\hypertarget{my_8h_a1d2d0c1f7e29f013e2bfb4ecece00811}{\index{my.\+h@{my.\+h}!my\+\_\+tablen@{my\+\_\+tablen}}
+\index{my\+\_\+tablen@{my\+\_\+tablen}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+tablen}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+tablen (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a1d2d0c1f7e29f013e2bfb4ecece00811}
+
+
+Definition at line 11 of file my\+\_\+tablen.\+c.
+
+\hypertarget{my_8h_a0e2a140625b831447e32a892878b72d7}{\index{my.\+h@{my.\+h}!my\+\_\+unputnbr@{my\+\_\+unputnbr}}
+\index{my\+\_\+unputnbr@{my\+\_\+unputnbr}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+unputnbr}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+unputnbr (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a0e2a140625b831447e32a892878b72d7}
+
+
+Definition at line 13 of file my\+\_\+unputnbr.\+c.
+
+\hypertarget{my_8h_ab0e9c74dd440e1a52cb7f52fdb13c09c}{\index{my.\+h@{my.\+h}!my\+\_\+unputnbrnoaffich@{my\+\_\+unputnbrnoaffich}}
+\index{my\+\_\+unputnbrnoaffich@{my\+\_\+unputnbrnoaffich}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+unputnbrnoaffich}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+unputnbrnoaffich (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{nb}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ab0e9c74dd440e1a52cb7f52fdb13c09c}
+
+
+Definition at line 35 of file my\+\_\+unputnbr.\+c.
+
+\hypertarget{my_8h_a9bbf186c3c7f01218fad6ee69cef6b2d}{\index{my.\+h@{my.\+h}!my\+\_\+unputnbrs@{my\+\_\+unputnbrs}}
+\index{my\+\_\+unputnbrs@{my\+\_\+unputnbrs}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+unputnbrs}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+unputnbrs (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{nb, }
+\item[{int}]{p, }
+\item[{int}]{nbr}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a9bbf186c3c7f01218fad6ee69cef6b2d}
+
+
+Definition at line 53 of file my\+\_\+unputnbr.\+c.
+
+\hypertarget{my_8h_a7c85d790d5958ef6b7e880acd800fc4f}{\index{my.\+h@{my.\+h}!my\+\_\+word\+\_\+in\+\_\+tab@{my\+\_\+word\+\_\+in\+\_\+tab}}
+\index{my\+\_\+word\+\_\+in\+\_\+tab@{my\+\_\+word\+\_\+in\+\_\+tab}!my.\+h@{my.\+h}}
+\subsubsection[{my\+\_\+word\+\_\+in\+\_\+tab}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ my\+\_\+word\+\_\+in\+\_\+tab (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a7c85d790d5958ef6b7e880acd800fc4f}
+
+
+Definition at line 83 of file my\+\_\+word\+\_\+in\+\_\+tab.\+c.
+
+\hypertarget{my_8h_ae07e4d968ee702cb282f6d1235fdecff}{\index{my.\+h@{my.\+h}!remove\+\_\+str\+\_\+in\+\_\+tab@{remove\+\_\+str\+\_\+in\+\_\+tab}}
+\index{remove\+\_\+str\+\_\+in\+\_\+tab@{remove\+\_\+str\+\_\+in\+\_\+tab}!my.\+h@{my.\+h}}
+\subsubsection[{remove\+\_\+str\+\_\+in\+\_\+tab}]{\setlength{\rightskip}{0pt plus 5cm}void remove\+\_\+str\+\_\+in\+\_\+tab (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{tab, }
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}}\label{my_8h_ae07e4d968ee702cb282f6d1235fdecff}
+
+
+Definition at line 13 of file remove\+\_\+str\+\_\+in\+\_\+tab.\+c.
+
+\hypertarget{my_8h_a210d12a636371bbb0f25115451e88ea6}{\index{my.\+h@{my.\+h}!s\+\_\+putstr@{s\+\_\+putstr}}
+\index{s\+\_\+putstr@{s\+\_\+putstr}!my.\+h@{my.\+h}}
+\subsubsection[{s\+\_\+putstr}]{\setlength{\rightskip}{0pt plus 5cm}int s\+\_\+putstr (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a210d12a636371bbb0f25115451e88ea6}
+
+
+Definition at line 13 of file case\+\_\+printf\+\_\+aff.\+c.
+
+\hypertarget{my_8h_a63c4dde944ff2968597443eaf08c9bc6}{\index{my.\+h@{my.\+h}!stat\+\_\+in\+\_\+buff@{stat\+\_\+in\+\_\+buff}}
+\index{stat\+\_\+in\+\_\+buff@{stat\+\_\+in\+\_\+buff}!my.\+h@{my.\+h}}
+\subsubsection[{stat\+\_\+in\+\_\+buff}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ stat\+\_\+in\+\_\+buff (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strtbuffer, }
+\item[{char $\ast$}]{buffer, }
+\item[{{\bf t\+\_\+getline} $\ast$}]{s, }
+\item[{char $\ast$}]{dest}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a63c4dde944ff2968597443eaf08c9bc6}
+
+
+Definition at line 55 of file get\+\_\+next\+\_\+line.\+c.
+
+\hypertarget{my_8h_a9bf3a9107dbcf7a29220551c1fdd07ce}{\index{my.\+h@{my.\+h}!where\+\_\+my\+\_\+buff\+\_\+end@{where\+\_\+my\+\_\+buff\+\_\+end}}
+\index{where\+\_\+my\+\_\+buff\+\_\+end@{where\+\_\+my\+\_\+buff\+\_\+end}!my.\+h@{my.\+h}}
+\subsubsection[{where\+\_\+my\+\_\+buff\+\_\+end}]{\setlength{\rightskip}{0pt plus 5cm}void where\+\_\+my\+\_\+buff\+\_\+end (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{statbuffer, }
+\item[{char $\ast$}]{stockstat, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a9bf3a9107dbcf7a29220551c1fdd07ce}
+
+
+Definition at line 15 of file get\+\_\+next\+\_\+line.\+c.
+
+\hypertarget{my_8h_a4333d447daeb94aa2c59468dd2dee929}{\index{my.\+h@{my.\+h}!x\+\_\+case@{x\+\_\+case}}
+\index{x\+\_\+case@{x\+\_\+case}!my.\+h@{my.\+h}}
+\subsubsection[{x\+\_\+case}]{\setlength{\rightskip}{0pt plus 5cm}int x\+\_\+case (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{argv, }
+\item[{{\bf t\+\_\+index} $\ast$}]{s, }
+\item[{const char $\ast$}]{format, }
+\item[{const {\bf t\+\_\+struc} $\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{my_8h_a4333d447daeb94aa2c59468dd2dee929}
+
+
+Definition at line 62 of file case\+\_\+printf\+\_\+nb.\+c.
+

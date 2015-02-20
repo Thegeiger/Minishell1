@@ -1,0 +1,170 @@
+.TH "lib/my/src/str/my_spe_in_tab.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/str/my_spe_in_tab.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmy_pstrlen\fP (char *str, char sep)"
+.br
+.ti -1c
+.RI "void \fBmy_freetab\fP (char **tab, int lines)"
+.br
+.ti -1c
+.RI "char ** \fBloop_condition\fP (char **tab, \fBt_win\fP *wit, char *str, char sep)"
+.br
+.ti -1c
+.RI "char ** \fBmy_word_in_tab_base\fP (char *str, \fBt_win\fP *wit, char sep)"
+.br
+.ti -1c
+.RI "char ** \fBmy_spe_in_tab\fP (char *str, char sep)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char** loop_condition (char **tab, \fBt_win\fP *wit, char *str, charsep)"
+
+.PP
+Definition at line 39 of file my_spe_in_tab\&.c\&.
+.PP
+References s_win::i, s_win::j, and s_win::nb\&.
+.PP
+Referenced by my_word_in_tab_base()\&.
+.PP
+.nf
+40 {
+41   if (str[wit->nb] == sep)
+42     {
+43       tab[wit->i][wit->j] = '\0';
+44       wit->i++;
+45       wit->nb++;
+46       wit->j = 0;
+47     }
+48   else
+49     {
+50       tab[wit->i][wit->j] = str[wit->nb];
+51       wit->nb++;
+52       wit->j++;
+53     }
+54   return (tab);
+55 }
+.fi
+.SS "void my_freetab (char **tab, intlines)"
+
+.PP
+Definition at line 26 of file my_spe_in_tab\&.c\&.
+.PP
+.nf
+27 {
+28   int   i;
+29 
+30   i = 0;
+31   while (i < lines)
+32     {
+33       free(tab[i]);
+34       i++;
+35     }
+36   free(tab);
+37 }
+.fi
+.SS "int my_pstrlen (char *str, charsep)"
+
+.PP
+Definition at line 14 of file my_spe_in_tab\&.c\&.
+.PP
+Referenced by my_word_in_tab_base()\&.
+.PP
+.nf
+15 {
+16   int   i;
+17 
+18   i = 0;
+19   while (str[i] != sep && str[i] != '\0')
+20     i++;
+21   if (str[i] != '\0')
+22     i++;
+23   return (i);
+24 }
+.fi
+.SS "char** my_spe_in_tab (char *str, charsep)"
+
+.PP
+Definition at line 83 of file my_spe_in_tab\&.c\&.
+.PP
+References s_win::i, s_win::j, my_word_in_tab_base(), s_win::nb, and s_win::word\&.
+.PP
+.nf
+84 {
+85   int   i;
+86   int   word;
+87   t_win struc;
+88 
+89   i = 0;
+90   word = 1;
+91   struc\&.j = 0;
+92   struc\&.i = 0;
+93   struc\&.nb = 0;
+94   while (str[i])
+95     {
+96       if (str[i] == sep)
+97         {
+98           i++;
+99           word++;
+100           while (str[i] == sep)
+101             i++;
+102         }
+103       else
+104         i++;
+105     }
+106   struc\&.word = word;
+107   return (my_word_in_tab_base(str, &struc, sep));
+108 }
+.fi
+.SS "char** my_word_in_tab_base (char *str, \fBt_win\fP *wit, charsep)"
+
+.PP
+Definition at line 57 of file my_spe_in_tab\&.c\&.
+.PP
+References s_win::i, s_win::j, s_win::lines, loop_condition(), my_pstrlen(), s_win::nb, and s_win::word\&.
+.PP
+Referenced by my_spe_in_tab()\&.
+.PP
+.nf
+58 {
+59   char  **tab;
+60 
+61   tab = malloc((wit->word + 1) * sizeof(char **));
+62   if (tab == NULL)
+63     return (NULL);
+64   while (wit->word)
+65     {
+66       tab[wit->i] = malloc((my_pstrlen(&str[wit->nb], sep) + 1) * sizeof(char *));
+67       if (tab[wit->i] == NULL)
+68     return (NULL);
+69       wit->nb = wit->nb + my_pstrlen(&str[wit->nb], sep);
+70       wit->word--;
+71       wit->i++;
+72     }
+73   tab[wit->i] = NULL;
+74   wit->lines = wit->i;
+75   wit->nb = 0;
+76   wit->i = 0;
+77   while (str[wit->nb])
+78     tab = loop_condition(tab, wit, str, sep);
+79   tab[wit->i][wit->j] = '\0';
+80   return (tab);
+81 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

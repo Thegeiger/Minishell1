@@ -1,0 +1,158 @@
+.TH "lib/my/src/printf/my_unputnbr.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/my_unputnbr.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmy_unputnbr\fP (unsigned int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_unputnbrnoaffich\fP (unsigned int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_unputnbrs\fP (unsigned int nb, int p, int nbr)"
+.br
+.ti -1c
+.RI "int \fBmy_lputnbr\fP (long int nb)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int my_lputnbr (long intnb)"
+
+.PP
+Definition at line 77 of file my_unputnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by case_di()\&.
+.PP
+.nf
+78 {
+79   long int  div;
+80   int       i;
+81 
+82   i = 0;
+83   div = 1;
+84   if (nb < 0)
+85     {
+86       my_putchar('-');
+87       nb = - nb;
+88       i++;
+89     }
+90   while (nb / (div * 10) > 0)
+91     div = div * 10;
+92   while (div != 0)
+93     {
+94       if (div == 1)
+95     my_putchar(nb % 10 + 48);
+96       else
+97     my_putchar(nb / div + 48);
+98       i++;
+99       nb = nb % div;
+100       div = div / 10;
+101     }
+102   return (i);
+103 }
+.fi
+.SS "int my_unputnbr (unsigned intnb)"
+
+.PP
+Definition at line 13 of file my_unputnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_rev_unint_tab(), and my_unputnbrs()\&.
+.PP
+.nf
+14 {
+15   unsigned int  div;
+16   int       i;
+17 
+18   i = 0;
+19   div = 1;
+20   while (div < 1000000000 && nb / (div * 10) > 0)
+21     div = div * 10;
+22   while (div != 0)
+23     {
+24       if (div == 1)
+25     my_putchar(nb % 10 + 48);
+26       else
+27     my_putchar(nb / div + 48);
+28       i++;
+29       nb = nb % div;
+30       div = div / 10;
+31     }
+32   return (i);
+33 }
+.fi
+.SS "int my_unputnbrnoaffich (unsigned intnb)"
+
+.PP
+Definition at line 35 of file my_unputnbr\&.c\&.
+.PP
+Referenced by my_unputnbrs()\&.
+.PP
+.nf
+36 {
+37   int   div;
+38   int   i;
+39 
+40   i = 0;
+41   div = 1;
+42   while (div < 1000000000 && nb / (div * 10) > 0)
+43     div = div * 10;
+44   while (div != 0)
+45     {
+46       i++;
+47       nb = nb % div;
+48       div = div / 10;
+49     }
+50   return (i);
+51 }
+.fi
+.SS "int my_unputnbrs (unsigned intnb, intp, intnbr)"
+
+.PP
+Definition at line 53 of file my_unputnbr\&.c\&.
+.PP
+References my_putchar(), my_unputnbr(), and my_unputnbrnoaffich()\&.
+.PP
+Referenced by case_u()\&.
+.PP
+.nf
+54 {
+55   int   i;
+56   int   ret;
+57   int   r;
+58 
+59   r = 0;
+60   ret = 0;
+61   if (p == 1)
+62     {
+63       i = my_unputnbrnoaffich(nb);
+64       while (nbr > i)
+65         {
+66           my_putchar('0');
+67           nbr--;
+68           r++;
+69         }
+70     }
+71   ret = r;
+72   r = my_unputnbr(nb);
+73   r = ret + r;
+74   return (r);
+75 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

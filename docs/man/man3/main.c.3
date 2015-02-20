@@ -1,0 +1,48 @@
+.TH "src/main.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/main.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+\fC#include 'mysh\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv, char **env)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (intargc, char **argv, char **env)"
+
+.PP
+Definition at line 14 of file main\&.c\&.
+.PP
+References minishell1(), and my_prompt()\&.
+.PP
+.nf
+15 {
+16   int   exit_boole;
+17 
+18   (void)argc;
+19   (void)argv;
+20   exit_boole = 0;
+21   while (exit_boole == 0)
+22     {
+23       my_prompt();
+24       if ((exit_boole = minishell1(env)) == 1)
+25     return (1);
+26     }
+27   return (0);
+28 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

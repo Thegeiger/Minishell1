@@ -1,0 +1,1760 @@
+.TH "include/my.h" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/my.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdarg\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBs_index\fP"
+.br
+.ti -1c
+.RI "struct \fBs_struc\fP"
+.br
+.ti -1c
+.RI "struct \fBs_win\fP"
+.br
+.ti -1c
+.RI "struct \fBs_getline\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSIZE_OF_READ\fP   1"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBs_index\fP \fBt_index\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBs_struc\fP \fBt_struc\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBs_win\fP \fBt_win\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBs_getline\fP \fBt_getline\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmy_strcmp\fP (char *a, char *b)"
+.br
+.ti -1c
+.RI "int \fBmy_strlen\fP (char *str)"
+.br
+.ti -1c
+.RI "char * \fBmy_strcpy\fP (char *dest, char *src)"
+.br
+.ti -1c
+.RI "char * \fBmy_strdup\fP (char *src)"
+.br
+.ti -1c
+.RI "char * \fBget_next_line\fP (const int fd)"
+.br
+.ti -1c
+.RI "char ** \fBmy_spe_in_tab\fP (char *str, char sep)"
+.br
+.ti -1c
+.RI "int \fBmy_strncmp\fP (char *a, char *b, int nb)"
+.br
+.ti -1c
+.RI "void \fBmy_putnstr\fP (char *str, int nb)"
+.br
+.ti -1c
+.RI "char * \fBmy_strndup\fP (char *src, int nb)"
+.br
+.ti -1c
+.RI "char * \fBmy_strncpy\fP (char *dest, char *src, int nb)"
+.br
+.ti -1c
+.RI "char * \fBmy_strnsdup\fP (char *src, int nb)"
+.br
+.ti -1c
+.RI "char * \fBmy_strnscpy\fP (char *dest, char *src, int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_printf\fP (const char *format,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBmy_putchar\fP (char c)"
+.br
+.ti -1c
+.RI "int \fBmy_putstr\fP (char *str)"
+.br
+.ti -1c
+.RI "int \fBmy_putnbr\fP (int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_unputnbr\fP (unsigned int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_rev_int_tab_long\fP (char *tab, long i)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_int_tab_un\fP (char *tab, long i)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_int_tab\fP (int *tab, int i)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_unint_tab\fP (unsigned int *tab, int i)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_caract_nimpr\fP (int *tab, int i)"
+.br
+.ti -1c
+.RI "int \fBmy_nb_stack\fP (char n)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_2\fP (int nb)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_octal\fP (char strnb, char *str)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_8_unint\fP (unsigned int nb)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_16_un\fP (unsigned int nb, char *str)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_16\fP (long nb, char *str)"
+.br
+.ti -1c
+.RI "int \fBs_putstr\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_p\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_x\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_c\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_s\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_b\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_di\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_o\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBx_case\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_u\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_pres\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_sharp\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_sharp2\fP (\fBt_index\fP *s, const char *format, int i, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_zero\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBmy_putnbrnoaffich\fP (int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_putnbrs\fP (int nb, int p, int nbr)"
+.br
+.ti -1c
+.RI "int \fBmy_unputnbrnoaffich\fP (unsigned int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_unputnbrs\fP (unsigned int nb, int p, int nbr)"
+.br
+.ti -1c
+.RI "int \fBcase_l\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBmy_lunputnbr\fP (long unsigned int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_lputnbr\fP (long int nb)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_16_lun\fP (long unsigned int nb, char *str)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_lunint_tab\fP (long unsigned int *tab, int i)"
+.br
+.ti -1c
+.RI "int \fBconvert_base_deci_8_lunint\fP (long unsigned int nb)"
+.br
+.ti -1c
+.RI "char ** \fBmy_word_in_tab\fP (char *str)"
+.br
+.ti -1c
+.RI "char * \fBgetbuffer\fP (char *buffer, char *retbuffer)"
+.br
+.ti -1c
+.RI "char * \fBstat_in_buff\fP (char *strtbuffer, char *buffer, \fBt_getline\fP *s, char *dest)"
+.br
+.ti -1c
+.RI "void \fBwhere_my_buff_end\fP (char *statbuffer, char *stockstat, int j)"
+.br
+.ti -1c
+.RI "void \fBmy_gstrcpy\fP (char *buffer, char *stockstat, \fBt_getline\fP *s, char *dest)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SIZE_OF_READ   1"
+
+.PP
+Definition at line 151 of file my\&.h\&.
+.PP
+Referenced by get_next_line(), my_gstrcpy(), and stat_in_buff()\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBs_getline\fP		 \fBt_getline\fP"
+
+.SS "typedef struct \fBs_index\fP			 \fBt_index\fP"
+
+.SS "typedef struct \fBs_struc\fP			 \fBt_struc\fP"
+
+.SS "typedef struct \fBs_win\fP		 \fBt_win\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "int case_b (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 13 of file case_printf_part2\&.c\&.
+.PP
+References convert_base_deci_2()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+15 {
+16   long          n;
+17   int       r;
+18 
+19   (void)*s;
+20   (void)*format;
+21   (void)*tab;
+22   n = (long)argv;
+23   r = convert_base_deci_2((int)n);
+24   return (r);
+25 }
+.fi
+.SS "int case_c (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 66 of file case_printf_part1\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+68 {
+69   long      c;
+70 
+71   (void)*s;
+72   (void)*format;
+73   (void)*tab;
+74   c = (long)argv;
+75   my_putchar((char)c);
+76   return (1);
+77 }
+.fi
+.SS "int case_di (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 27 of file case_printf_part2\&.c\&.
+.PP
+References my_lputnbr(), my_putnbrs(), s_index::nbr, and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+29 {
+30   long      n;
+31   int       r;
+32 
+33   (void)tab;
+34   (void)format;
+35   n = (long)argv;
+36   if (s->p == 2)
+37     r = my_lputnbr(n);
+38   else
+39     r = my_putnbrs((int)n, s->p, s->nbr);
+40   s->p = 0;
+41   return (r);
+42 }
+.fi
+.SS "int case_l (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 13 of file case_printf_part4\&.c\&.
+.PP
+References s_struc::c, s_index::i, s_index::n, s_index::p, and s_struc::ptr_tab\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+15 {
+16   int       i;
+17 
+18   i = 0;
+19   if (format[s->i + 1] == 'x' || format[s->i + 1] == 'X'
+20       || format[s->i + 1] == 'o' || format[s->i + 1] == 'd'
+21       || format[s->i + 1] == 'i' || format[s->i + 1] == 'u')
+22     {
+23       s->p = 2;
+24       s->n = 0;
+25       while (tab[s->n]\&.c != format[s->i + 1])
+26     s->n++;
+27       i = (*tab[s->n]\&.ptr_tab)(argv, s, format, tab);
+28       s->i++;
+29     }
+30   return (i);
+31 }
+.fi
+.SS "int case_o (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 44 of file case_printf_part2\&.c\&.
+.PP
+References convert_base_deci_8_lunint(), convert_base_deci_8_unint(), and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+46 {
+47   long      n;
+48   int       r;
+49 
+50   (void)*tab;
+51   (void)*s;
+52   (void)*format;
+53   n = (long)argv;
+54   if (s->p == 2)
+55     convert_base_deci_8_lunint((long unsigned int)n);
+56   else
+57     r = convert_base_deci_8_unint((unsigned int)n);
+58   return (r);
+59   s->p = 0;
+60 }
+.fi
+.SS "int case_p (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 35 of file case_printf_part1\&.c\&.
+.PP
+References convert_base_deci_16()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+37 {
+38   long      n;
+39   int       r;
+40 
+41   (void)*s;
+42   (void)*format;
+43   (void)*tab;
+44   n = (long)argv;
+45   r = convert_base_deci_16(n, "0123456789abcdef");
+46   return (r);
+47 }
+.fi
+.SS "int case_pres (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 13 of file case_printf_part3\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+15 {
+16   (void)*s;
+17   (void)*tab;
+18   (void)argv;
+19   (void)*format;
+20   my_putchar('%');
+21   return (1);
+22 }
+.fi
+.SS "int case_s (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 79 of file case_printf_part1\&.c\&.
+.PP
+References my_putstr()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+81 {
+82   long      *str;
+83   int       r;
+84 
+85   str = argv;
+86   (void)*format;
+87   (void)*tab;
+88   if (str == 0)
+89     {
+90       my_putstr("(null)");
+91       return (6);
+92     }
+93   (void)*s;
+94   r = my_putstr((char *)str);
+95   return (r);
+96 }
+.fi
+.SS "int case_sharp (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 42 of file case_printf_part3\&.c\&.
+.PP
+References case_sharp2(), s_index::i, s_index::n, and s_struc::ptr_tab\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+44 {
+45   int       i;
+46   int       ret;
+47 
+48   i = 0;
+49   ret = 0;
+50   if (format[s->i + 1] == 'x' || format[s->i + 1] == 'X'
+51       || format[s->i + 1] == 'o')
+52     {
+53       s->n = 0;
+54       i = case_sharp2(s, format, i, tab);
+55       ret = i;
+56       i = (*tab[s->n]\&.ptr_tab)(argv, s, format, tab);
+57       i = i + ret;
+58       s->i++;
+59     }
+60   return (i);
+61 }
+.fi
+.SS "int case_sharp2 (\fBt_index\fP *s, const char *format, inti, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 24 of file case_printf_part3\&.c\&.
+.PP
+References s_struc::c, s_index::i, my_putchar(), my_putstr(), and s_index::n\&.
+.PP
+Referenced by case_sharp()\&.
+.PP
+.nf
+26 {
+27   if (format[s->i + 1] == 'x' || format[s->i + 1] == 'X')
+28     {
+29       my_putstr("0x");
+30       i = i + 2;
+31     }
+32   else if (format[s->i + 1] == 'o')
+33     {
+34       my_putchar('0');
+35       i = i + 1;
+36     }
+37   while (tab[s->n]\&.c != format[s->i + 1])
+38     s->n++;
+39   return (i);
+40 }
+.fi
+.SS "int case_u (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 79 of file case_printf_part2\&.c\&.
+.PP
+References my_lunputnbr(), my_unputnbrs(), s_index::nbr, and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+81 {
+82   long      n;
+83   int       r;
+84 
+85   (void)*s;
+86   (void)*tab;
+87   (void)*format;
+88   n = (long)argv;
+89   if (s->p == 2)
+90     my_lunputnbr((long unsigned int)n);
+91   else
+92     r = my_unputnbrs((unsigned int)n, s->p, s->nbr);
+93   s->p = 0;
+94   return (r);
+95 }
+.fi
+.SS "int case_x (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 49 of file case_printf_part1\&.c\&.
+.PP
+References convert_base_deci_16_lun(), convert_base_deci_16_un(), and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+51 {
+52   long      n;
+53   int       r;
+54 
+55   (void)*s;
+56   (void)*format;
+57   (void)*tab;
+58   n = (long)argv;
+59   if (s->p == 2)
+60     r = convert_base_deci_16_lun((long unsigned int)n, "0123456789abcdef");
+61   else
+62     r = convert_base_deci_16_un((unsigned int)n, "0123456789abcdef");
+63   return (r);
+64 }
+.fi
+.SS "int case_zero (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 63 of file case_printf_part3\&.c\&.
+.PP
+References s_struc::c, s_index::i, s_index::n, s_index::nbr, s_index::p, and s_struc::ptr_tab\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+65 {
+66   int       i;
+67 
+68   s->nbr = 0;
+69   i = 0;
+70   while (format[s->i + 1] >= '0' && format[s->i + 1] <= '9')
+71     {
+72       s->nbr = s->nbr * 10 + format[s->i + 1] - '0';
+73       s->i++;
+74     }
+75   if (format[s->i + 1] == 'x' || format[s->i + 1] == 'X'
+76       || format[s->i + 1] == 'o' || format[s->i + 1] == 'u'
+77       || format[s->i + 1] == 'd' || format[s->i + 1] == 'i')
+78     {
+79       s->p = 1;
+80       s->n = 0;
+81       while (tab[s->n]\&.c != format[s->i + 1])
+82     s->n++;
+83       i = (*tab[s->n]\&.ptr_tab)(argv, s, format, tab);
+84       s->i++;
+85     }
+86   return (i);
+87 }
+.fi
+.SS "int convert_base_deci_16 (longnb, char *str)"
+
+.PP
+Definition at line 67 of file convert_base_deci\&.c\&.
+.PP
+References my_rev_int_tab_long()\&.
+.PP
+Referenced by case_p()\&.
+.PP
+.nf
+68 {
+69   int   base;
+70   long   res;
+71   char  *tab;
+72   long   i;
+73 
+74   tab = malloc(sizeof(*tab) * 32 + 1);
+75   if (tab == NULL)
+76     return (1);
+77   res = 1;
+78   i = 0;
+79   base = 16;
+80   while (res != 0)
+81     {
+82       res = nb / base;
+83       tab[i] = str[nb % base];
+84       i++;
+85       nb = res;
+86     }
+87   tab[i] = '\0';
+88   i = my_rev_int_tab_long(tab, i);
+89   free(tab);
+90   return (i);
+91 }
+.fi
+.SS "int convert_base_deci_16_lun (long unsigned intnb, char *str)"
+
+.PP
+Definition at line 14 of file convert_base_deci_part4\&.c\&.
+.PP
+References my_rev_int_tab_un()\&.
+.PP
+Referenced by case_x(), and x_case()\&.
+.PP
+.nf
+15 {
+16   int           base;
+17   long unsigned int res;
+18   char          *tab;
+19   unsigned int      i;
+20 
+21   tab = malloc(sizeof(*tab) * 20 + 1);
+22   if (tab == NULL)
+23     return (1);
+24   res = 1;
+25   i = 0;
+26   base = 16;
+27   while (res != 0)
+28     {
+29       res = nb / base;
+30       tab[i] = nb % base;
+31       tab[i] = str[nb % base];
+32       i++;
+33       nb = res;
+34     }
+35   tab[i] = '\0';
+36   my_rev_int_tab_un(tab, i);
+37   free(tab);
+38   return (i);
+39 }
+.fi
+.SS "int convert_base_deci_16_un (unsigned intnb, char *str)"
+
+.PP
+Definition at line 40 of file convert_base_deci\&.c\&.
+.PP
+References my_rev_int_tab_un()\&.
+.PP
+Referenced by case_x(), and x_case()\&.
+.PP
+.nf
+41 {
+42   int       base;
+43   unsigned int  res;
+44   char      *tab;
+45   unsigned int  i;
+46 
+47   tab = malloc(sizeof(*tab) * 16 + 1);
+48   if (tab == NULL)
+49     return (1);
+50   res = 1;
+51   i = 0;
+52   base = 16;
+53   while (res != 0)
+54     {
+55       res = nb / base;
+56       tab[i] = nb % base;
+57       tab[i] = str[nb % base];
+58       i++;
+59       nb = res;
+60     }
+61   tab[i] = '\0';
+62   my_rev_int_tab_un(tab, i);
+63   free(tab);
+64   return (i);
+65 }
+.fi
+.SS "int convert_base_deci_2 (intnb)"
+
+.PP
+Definition at line 48 of file convert_base_deci_part3\&.c\&.
+.PP
+References my_rev_int_tab()\&.
+.PP
+Referenced by case_b()\&.
+.PP
+.nf
+49 {
+50   int   base;
+51   int   res;
+52   int   *tab;
+53   int   i;
+54 
+55   if (nb < 0)
+56     nb = - nb;
+57   tab = malloc(sizeof(*tab) * 16 + 1);
+58   if (tab == NULL)
+59     return (1);
+60   res = 1;
+61   i = 0;
+62   base = 2;
+63   while (res != 0)
+64     {
+65       res = nb / base;
+66       tab[i] = nb % base;
+67       i++;
+68       nb = res;
+69     }
+70   my_rev_int_tab(tab, i);
+71   free(tab);
+72   return (i);
+73 }
+.fi
+.SS "int convert_base_deci_8_lunint (long unsigned intnb)"
+
+.PP
+Definition at line 51 of file convert_base_deci_part4\&.c\&.
+.PP
+References my_rev_lunint_tab()\&.
+.PP
+Referenced by case_o()\&.
+.PP
+.nf
+52 {
+53   int           base;
+54   long unsigned int res;
+55   long unsigned int *tab;
+56   int           i;
+57 
+58   tab = malloc(sizeof(*tab) * 16 + 1);
+59   if (tab == NULL)
+60     return (1);
+61   res = 1;
+62   i = 0;
+63   base = 8;
+64   while (res != 0)
+65     {
+66       res = nb / base;
+67       tab[i] = nb % base;
+68       i++;
+69       nb = res;
+70     }
+71   tab[i] = '\0';
+72   my_rev_lunint_tab(tab, i);
+73   free(tab);
+74   return (i);
+75 }
+.fi
+.SS "int convert_base_deci_8_unint (unsigned intnb)"
+
+.PP
+Definition at line 14 of file convert_base_deci\&.c\&.
+.PP
+References my_rev_unint_tab()\&.
+.PP
+Referenced by case_o()\&.
+.PP
+.nf
+15 {
+16   int       base;
+17   unsigned int  res;
+18   unsigned int  *tab;
+19   int       i;
+20 
+21   tab = malloc(sizeof(*tab) * 16 + 1);
+22   if (tab == NULL)
+23     return (1);
+24   res = 1;
+25   i = 0;
+26   base = 8;
+27   while (res != 0)
+28     {
+29       res = nb / base;
+30       tab[i] = nb % base;
+31       i++;
+32       nb = res;
+33     }
+34   tab[i] = '\0';
+35   my_rev_unint_tab(tab, i);
+36   free(tab);
+37   return (i);
+38 }
+.fi
+.SS "int convert_base_deci_octal (charstrnb, char *str)"
+
+.PP
+Definition at line 75 of file convert_base_deci_part3\&.c\&.
+.PP
+References my_rev_caract_nimpr(), and my_strlen()\&.
+.PP
+Referenced by s_putstr()\&.
+.PP
+.nf
+76 {
+77   int   base;
+78   int   res;
+79   int  *tab;
+80   int   i;
+81   int   nb;
+82 
+83   tab = malloc(sizeof(*tab) * 16 + 1);
+84   if (tab == NULL)
+85     return (1);
+86   nb = strnb;
+87   res = 1;
+88   i = 0;
+89   base = my_strlen(str);
+90   while (res != 0)
+91     {
+92       res = nb / base;
+93       tab[i] = str[nb % base];
+94       i++;
+95       nb = res;
+96     }
+97   tab[i] = '\0';
+98   my_rev_caract_nimpr(tab, i);
+99   free(tab);
+100   return (i);
+101 }
+.fi
+.SS "char * get_next_line (const intfd)"
+
+.PP
+Definition at line 81 of file get_next_line\&.c\&.
+.PP
+Referenced by minishell1()\&.
+.PP
+.nf
+82 {
+83   static char   statbuffer[SIZE_OF_READ + 1];
+84   t_getline     s;
+85 
+86   s\&.i = 1;
+87   s\&.stop = 0;
+88   while (s\&.stop == 0)
+89     {
+90       if ((s\&.buffer = malloc(SIZE_OF_READ * s\&.i + SIZE_OF_READ)) == NULL)
+91     return (NULL);
+92       if ((s\&.ret = read(fd, statbuffer, SIZE_OF_READ)) == - 1)
+93     return (NULL);
+94       statbuffer[s\&.ret] = '\0';
+95       s\&.buffer = stat_in_buff(statbuffer, s\&.buffer, &s, s\&.dest);
+96       if (s\&.i != 1)
+97     free(s\&.dest);
+98       if (s\&.ret == 0)
+99     {
+100       close(fd);
+101       return (s\&.buffer);
+102     }
+103       s\&.dest = s\&.buffer;
+104       s\&.i++;
+105     }
+106   return (s\&.buffer);
+107 }
+.fi
+.SS "char* getbuffer (char *buffer, char *retbuffer)"
+
+.SS "void my_gstrcpy (char *buffer, char *stockstat, \fBt_getline\fP *s, char *dest)"
+
+.PP
+Definition at line 29 of file get_next_line\&.c\&.
+.PP
+References s_getline::i, s_getline::s, and SIZE_OF_READ\&.
+.PP
+Referenced by stat_in_buff()\&.
+.PP
+.nf
+30 {
+31   int       i;
+32 
+33   i = 0;
+34   while (stockstat[s->s])
+35     {
+36       buffer[s->s] = stockstat[i];
+37       s->s++;
+38       i++;
+39     }
+40   i = 0;
+41   while (i != SIZE_OF_READ)
+42     {
+43       stockstat[i] = '\0';
+44       i++;
+45     }
+46   i = 0;
+47   while (i != (s->i - 1) * SIZE_OF_READ)
+48     {
+49       buffer[s->s] = dest[i];
+50       i++;
+51       s->s++;
+52     }
+53 }
+.fi
+.SS "int my_lputnbr (long intnb)"
+
+.PP
+Definition at line 77 of file my_unputnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by case_di()\&.
+.PP
+.nf
+78 {
+79   long int  div;
+80   int       i;
+81 
+82   i = 0;
+83   div = 1;
+84   if (nb < 0)
+85     {
+86       my_putchar('-');
+87       nb = - nb;
+88       i++;
+89     }
+90   while (nb / (div * 10) > 0)
+91     div = div * 10;
+92   while (div != 0)
+93     {
+94       if (div == 1)
+95     my_putchar(nb % 10 + 48);
+96       else
+97     my_putchar(nb / div + 48);
+98       i++;
+99       nb = nb % div;
+100       div = div / 10;
+101     }
+102   return (i);
+103 }
+.fi
+.SS "int my_lunputnbr (long unsigned intnb)"
+
+.PP
+Definition at line 91 of file my_putnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by case_u(), and my_rev_lunint_tab()\&.
+.PP
+.nf
+92 {
+93   long int  div;
+94   int       i;
+95 
+96   i = 0;
+97   div = 1;
+98   while (nb / (div * 10) > 0)
+99     div = div * 10;
+100   while (div != 0)
+101     {
+102       if (div == 1)
+103         my_putchar(nb % 10 + 48);
+104       else
+105         my_putchar(nb / div + 48);
+106       i++;
+107       nb = nb % div;
+108       div = div / 10;
+109     }
+110   return (i);
+111 }
+.fi
+.SS "int my_nb_stack (charn)"
+
+.PP
+Definition at line 39 of file convert_base_deci_part3\&.c\&.
+.PP
+.nf
+40 {
+41   int   nb;
+42 
+43   nb = 0;
+44   nb = nb * 10 + n;
+45   return (nb);
+46 }
+.fi
+.SS "int my_printf (const char *format, \&.\&.\&.)"
+
+.PP
+Definition at line 57 of file my_printf\&.c\&.
+.PP
+References case_b(), case_c(), case_di(), case_l(), case_o(), case_p(), case_pres(), case_s(), case_sharp(), case_u(), case_x(), case_zero(), s_index::i, my_printf2(), s_index::p, s_index::r, s_putstr(), and x_case()\&.
+.PP
+Referenced by my_aff_env()\&.
+.PP
+.nf
+58 {
+59   va_list   ap;
+60   t_index   s;
+61   static const t_struc  tab[] = { { 's', &case_s }, { 'p', &case_p },
+62                   { 'd', &case_di },
+63               { 'b', &case_b }, { 'x', &case_x }, { 'S', &s_putstr },
+64               { 'X', &x_case }, { 'u', &case_u }, { 'i', &case_di },
+65               { 'o', &case_o }, { 'c', &case_c }, { '%', &case_pres },
+66               { '#', &case_sharp }, { '0', &case_zero }, { 'l', &case_l } };
+67 
+68   s\&.i = 0;
+69   s\&.r = 0;
+70   s\&.p = 0;
+71   va_start(ap, format);
+72   my_printf2(format, ap, &s, tab);
+73   va_end(ap);
+74   return (s\&.r);
+75 }
+.fi
+.SS "void my_putchar (charc)"
+
+.PP
+Definition at line 14 of file my_putchar\&.c\&.
+.PP
+Referenced by case_c(), case_pres(), case_sharp2(), my_find_pwd(), my_lputnbr(), my_lunputnbr(), my_printf2(), my_prompt(), my_putnbr(), my_putnbrnoaffich(), my_putnbrs(), my_putnstr(), my_putstr(), my_rev_caract_nimpr(), my_rev_int_tab_long(), my_rev_int_tab_un(), my_unputnbr(), my_unputnbrs(), and s_putstr()\&.
+.PP
+.nf
+15 {
+16   write(1, &c, 1);
+17 }
+.fi
+.SS "int my_putnbr (intnb)"
+
+.PP
+Definition at line 13 of file my_putnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_prompt(), my_putnbrs(), and my_rev_int_tab()\&.
+.PP
+.nf
+14 {
+15   int   div;
+16   int   i;
+17 
+18   i = 0;
+19   div = 1;
+20   if (nb < 0)
+21     {
+22       my_putchar('-');
+23       nb = - nb;
+24       i++;
+25     }
+26   while (div < 1000000000 && nb / (div * 10) > 0)
+27     div = div * 10;
+28   while (div != 0)
+29     {
+30       if (div == 1)
+31     my_putchar(nb % 10 + 48);
+32       else
+33     my_putchar(nb / div + 48);
+34       i++;
+35       nb = nb % div;
+36       div = div / 10;
+37     }
+38   return (i);
+39 }
+.fi
+.SS "int my_putnbrnoaffich (intnb)"
+
+.PP
+Definition at line 41 of file my_putnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_putnbrs()\&.
+.PP
+.nf
+42 {
+43   int   div;
+44   int   i;
+45 
+46   i = 0;
+47   div = 1;
+48   if (nb < 0)
+49     {
+50       my_putchar('-');
+51       nb = - nb;
+52       i++;
+53     }
+54   while (div < 1000000000 && nb / (div * 10) > 0)
+55     div = div * 10;
+56   while (div != 0)
+57     {
+58       nb = nb % div;
+59       div = div / 10;
+60       i++;
+61     }
+62   return (i);
+63 }
+.fi
+.SS "int my_putnbrs (intnb, intp, intnbr)"
+
+.PP
+Definition at line 65 of file my_putnbr\&.c\&.
+.PP
+References my_putchar(), my_putnbr(), and my_putnbrnoaffich()\&.
+.PP
+Referenced by case_di()\&.
+.PP
+.nf
+66 {
+67   int   i;
+68   int   ret;
+69   int   r;
+70 
+71   r = 0;
+72   ret = 0;
+73   if (p == 1)
+74     {
+75       i = my_putnbrnoaffich(nb);
+76       if (nb < 0)
+77     nb = - nb;
+78       while (nbr > i)
+79     {
+80       my_putchar('0');
+81       nbr--;
+82       r++;
+83     }
+84     }
+85   ret = r;
+86   r = my_putnbr(nb);
+87   r = ret + r;
+88   return (r);
+89 }
+.fi
+.SS "void my_putnstr (char *str, intnb)"
+
+.PP
+Definition at line 13 of file my_putnstr\&.c\&.
+.PP
+References my_putchar(), and my_strlen()\&.
+.PP
+Referenced by my_find_pwd()\&.
+.PP
+.nf
+14 {
+15   int   i;
+16 
+17   i = nb;
+18   if (nb >= my_strlen(str))
+19     return ;
+20   while (str[i])
+21     {
+22       my_putchar(str[i]);
+23       i++;
+24     }
+25 }
+.fi
+.SS "int my_putstr (char *str)"
+
+.PP
+Definition at line 13 of file my_putstr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by case_s(), case_sharp2(), case_unsetenv(), minishell1(), my_find_pwd(), my_prompt(), my_rev_caract_nimpr(), my_rev_int_tab_long(), and my_unsetenv()\&.
+.PP
+.nf
+14 {
+15   int   i;
+16 
+17   i = 0;
+18   while (str[i])
+19     {
+20       my_putchar(str[i]);
+21       i++;
+22     }
+23   return (i);
+24 }
+.fi
+.SS "void my_rev_caract_nimpr (int *tab, inti)"
+
+.PP
+Definition at line 24 of file convert_base_deci_part3\&.c\&.
+.PP
+References my_putchar(), and my_putstr()\&.
+.PP
+Referenced by convert_base_deci_octal()\&.
+.PP
+.nf
+25 {
+26   i--;
+27   my_putchar(92);
+28   if (i == 0)
+29     my_putstr("00");
+30   if (i == 1)
+31     my_putchar('0');
+32   while (i >= 0)
+33     {
+34       my_putchar(tab[i]);
+35       i--;
+36     }
+37 }
+.fi
+.SS "void my_rev_int_tab (int *tab, inti)"
+
+.PP
+Definition at line 54 of file convert_base_deci_part2\&.c\&.
+.PP
+References my_putnbr()\&.
+.PP
+Referenced by convert_base_deci_2()\&.
+.PP
+.nf
+55 {
+56   i--;
+57   while (i >= 0)
+58     {
+59       my_putnbr(tab[i]);
+60       i--;
+61     }
+62 }
+.fi
+.SS "int my_rev_int_tab_long (char *tab, longi)"
+
+.PP
+Definition at line 23 of file convert_base_deci_part2\&.c\&.
+.PP
+References my_putchar(), and my_putstr()\&.
+.PP
+Referenced by convert_base_deci_16()\&.
+.PP
+.nf
+24 {
+25   int   r;
+26 
+27   i--;
+28   if (tab[i] == 48 && tab[i + 1] == '\0')
+29     {
+30       my_putstr("(nil)");
+31       return (5);
+32     }
+33   my_putstr("0x");
+34   r = 2;
+35   while (i >= 0)
+36     {
+37       my_putchar(tab[i]);
+38       i--;
+39       r++;
+40     }
+41   return (r);
+42 }
+.fi
+.SS "void my_rev_int_tab_un (char *tab, longi)"
+
+.PP
+Definition at line 44 of file convert_base_deci_part2\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by convert_base_deci_16_lun(), and convert_base_deci_16_un()\&.
+.PP
+.nf
+45 {
+46   i--;
+47   while (i >= 0)
+48     {
+49       my_putchar(tab[i]);
+50       i--;
+51     }
+52 }
+.fi
+.SS "void my_rev_lunint_tab (long unsigned int *tab, inti)"
+
+.PP
+Definition at line 41 of file convert_base_deci_part4\&.c\&.
+.PP
+References my_lunputnbr()\&.
+.PP
+Referenced by convert_base_deci_8_lunint()\&.
+.PP
+.nf
+42 {
+43   i--;
+44   while (i >= 0)
+45     {
+46       my_lunputnbr(tab[i]);
+47       i--;
+48     }
+49 }
+.fi
+.SS "void my_rev_unint_tab (unsigned int *tab, inti)"
+
+.PP
+Definition at line 14 of file convert_base_deci_part3\&.c\&.
+.PP
+References my_unputnbr()\&.
+.PP
+Referenced by convert_base_deci_8_unint()\&.
+.PP
+.nf
+15 {
+16   i--;
+17   while (i >= 0)
+18     {
+19       my_unputnbr(tab[i]);
+20       i--;
+21     }
+22 }
+.fi
+.SS "char** my_spe_in_tab (char *str, charsep)"
+
+.PP
+Definition at line 83 of file my_spe_in_tab\&.c\&.
+.PP
+References s_win::i, s_win::j, my_word_in_tab_base(), s_win::nb, and s_win::word\&.
+.PP
+.nf
+84 {
+85   int   i;
+86   int   word;
+87   t_win struc;
+88 
+89   i = 0;
+90   word = 1;
+91   struc\&.j = 0;
+92   struc\&.i = 0;
+93   struc\&.nb = 0;
+94   while (str[i])
+95     {
+96       if (str[i] == sep)
+97         {
+98           i++;
+99           word++;
+100           while (str[i] == sep)
+101             i++;
+102         }
+103       else
+104         i++;
+105     }
+106   struc\&.word = word;
+107   return (my_word_in_tab_base(str, &struc, sep));
+108 }
+.fi
+.SS "int my_strcmp (char *a, char *b)"
+
+.PP
+Definition at line 13 of file my_strcmp\&.c\&.
+.PP
+Referenced by case_unsetenv(), and minishell1()\&.
+.PP
+.nf
+14 {
+15   while (((*a) != '\0' && (*b) != '\0'))
+16     {
+17       if (*(a) == *(b))
+18         {
+19           a++;
+20           b++;
+21         }
+22       else
+23         break ;
+24     }
+25   return ((int) ((*a) - (*b)));
+26 }
+.fi
+.SS "char* my_strcpy (char *dest, char *src)"
+
+.PP
+Definition at line 13 of file my_strcpy\&.c\&.
+.PP
+Referenced by my_strdup()\&.
+.PP
+.nf
+14 {
+15   char  *dest_addr;
+16 
+17   dest_addr = dest;
+18   while ((*src) != '\0')
+19     {
+20       (*dest) = (*src);
+21       dest++;
+22       src++;
+23     }
+24   *dest = '\0';
+25   return (dest_addr);
+26 }
+.fi
+.SS "char* my_strdup (char *src)"
+
+.PP
+Definition at line 14 of file my_strdup\&.c\&.
+.PP
+References my_strcpy(), and my_strlen()\&.
+.PP
+.nf
+15 {
+16   char  *new_str;
+17   int   size;
+18 
+19   size = my_strlen(src);
+20   new_str = malloc(sizeof(char) * size + 1);
+21   if (new_str == 0)
+22     return (0);
+23   my_strcpy(new_str, src);
+24   return (new_str);
+25 }
+.fi
+.SS "int my_strlen (char *str)"
+
+.PP
+Definition at line 11 of file my_strlen\&.c\&.
+.PP
+Referenced by convert_base_deci_octal(), my_putnstr(), my_strdup(), my_strndup(), and my_strnsdup()\&.
+.PP
+.nf
+12 {
+13   int   i;
+14 
+15   i = 0;
+16   while (str[i])
+17     ++i;
+18   return (i);
+19 }
+.fi
+.SS "int my_strncmp (char *a, char *b, intnb)"
+
+.PP
+Definition at line 11 of file my_strncmp\&.c\&.
+.PP
+Referenced by case_unsetenv(), my_find_pwd(), and my_unsetenv()\&.
+.PP
+.nf
+12 {
+13   int   i;
+14 
+15   i = 0;
+16   while (a[i] != '\0' && b[i] != '\0' && i != nb)
+17     {
+18       if (a[i] == b[i])
+19     i++;
+20       else
+21     return (1);
+22     }
+23   return (0);
+24 }
+.fi
+.SS "char* my_strncpy (char *dest, char *src, intnb)"
+
+.PP
+Definition at line 13 of file my_strncpy\&.c\&.
+.PP
+Referenced by my_strndup()\&.
+.PP
+.nf
+14 {
+15   int   i;
+16 
+17   i = 0;
+18   while (src[i] != '\0' && i != nb)
+19     {
+20       dest[i] = src[i];
+21       i++;
+22     }
+23   dest[i] = '\0';
+24   return (dest);
+25 }
+.fi
+.SS "char* my_strndup (char *src, intnb)"
+
+.PP
+Definition at line 14 of file my_strndup\&.c\&.
+.PP
+References my_strlen(), and my_strncpy()\&.
+.PP
+.nf
+15 {
+16   char  *new_str;
+17   int   size;
+18 
+19   size = my_strlen(src);
+20   new_str = malloc(sizeof(char) * size + 1);
+21   if (new_str == 0)
+22     return (0);
+23   my_strncpy(new_str, src, nb);
+24   return (new_str);
+25 }
+.fi
+.SS "char* my_strnscpy (char *dest, char *src, intnb)"
+
+.PP
+Definition at line 13 of file my_strnscpy\&.c\&.
+.PP
+Referenced by my_strnsdup()\&.
+.PP
+.nf
+14 {
+15   int   i;
+16   int   j;
+17 
+18   j = 0;
+19   i = nb;
+20   while (src[i] != '\0')
+21     {
+22       dest[j] = src[i];
+23       i++;
+24       j++;
+25     }
+26   dest[j] = '\0';
+27   return (dest);
+28 }
+.fi
+.SS "char* my_strnsdup (char *src, intnb)"
+
+.PP
+Definition at line 14 of file my_strnsdup\&.c\&.
+.PP
+References my_strlen(), and my_strnscpy()\&.
+.PP
+Referenced by case_unsetenv()\&.
+.PP
+.nf
+15 {
+16   char  *new_str;
+17   int   size;
+18 
+19   size = my_strlen(src);
+20   new_str = malloc(sizeof(char) * size + 1);
+21   if (new_str == 0)
+22     return (0);
+23   my_strnscpy(new_str, src, nb);
+24   return (new_str);
+25 }
+.fi
+.SS "int my_unputnbr (unsigned intnb)"
+
+.PP
+Definition at line 13 of file my_unputnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_rev_unint_tab(), and my_unputnbrs()\&.
+.PP
+.nf
+14 {
+15   unsigned int  div;
+16   int       i;
+17 
+18   i = 0;
+19   div = 1;
+20   while (div < 1000000000 && nb / (div * 10) > 0)
+21     div = div * 10;
+22   while (div != 0)
+23     {
+24       if (div == 1)
+25     my_putchar(nb % 10 + 48);
+26       else
+27     my_putchar(nb / div + 48);
+28       i++;
+29       nb = nb % div;
+30       div = div / 10;
+31     }
+32   return (i);
+33 }
+.fi
+.SS "int my_unputnbrnoaffich (unsigned intnb)"
+
+.PP
+Definition at line 35 of file my_unputnbr\&.c\&.
+.PP
+Referenced by my_unputnbrs()\&.
+.PP
+.nf
+36 {
+37   int   div;
+38   int   i;
+39 
+40   i = 0;
+41   div = 1;
+42   while (div < 1000000000 && nb / (div * 10) > 0)
+43     div = div * 10;
+44   while (div != 0)
+45     {
+46       i++;
+47       nb = nb % div;
+48       div = div / 10;
+49     }
+50   return (i);
+51 }
+.fi
+.SS "int my_unputnbrs (unsigned intnb, intp, intnbr)"
+
+.PP
+Definition at line 53 of file my_unputnbr\&.c\&.
+.PP
+References my_putchar(), my_unputnbr(), and my_unputnbrnoaffich()\&.
+.PP
+Referenced by case_u()\&.
+.PP
+.nf
+54 {
+55   int   i;
+56   int   ret;
+57   int   r;
+58 
+59   r = 0;
+60   ret = 0;
+61   if (p == 1)
+62     {
+63       i = my_unputnbrnoaffich(nb);
+64       while (nbr > i)
+65         {
+66           my_putchar('0');
+67           nbr--;
+68           r++;
+69         }
+70     }
+71   ret = r;
+72   r = my_unputnbr(nb);
+73   r = ret + r;
+74   return (r);
+75 }
+.fi
+.SS "char** my_word_in_tab (char *str)"
+
+.PP
+Definition at line 83 of file my_word_in_tab\&.c\&.
+.PP
+References s_win::i, s_win::j, my_word_in_tab_base(), s_win::nb, and s_win::word\&.
+.PP
+.nf
+84 {
+85   int   i;
+86   int   word;
+87   t_win struc;
+88 
+89   i = 0;
+90   word = 1;
+91   struc\&.j = 0;
+92   struc\&.i = 0;
+93   struc\&.nb = 0;
+94   while (str[i])
+95     {
+96       if (str[i] == ' ')
+97         {
+98           i++;
+99           word++;
+100           while (str[i] == ' ')
+101             i++;
+102         }
+103       else
+104         i++;
+105     }
+106   struc\&.word = word;
+107   return (my_word_in_tab_base(str, &struc));
+108 }
+.fi
+.SS "int s_putstr (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 13 of file case_printf_part1\&.c\&.
+.PP
+References convert_base_deci_octal(), and my_putchar()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+15 {
+16   int       i;
+17   char      *str;
+18 
+19   (void)*s;
+20   (void)*format;
+21   (void)*tab;
+22   str = argv;
+23   i = 0;
+24   while (str[i])
+25     {
+26       if (str[i] < 32 || str[i] >= 127)
+27     convert_base_deci_octal(str[i], "01234567");
+28       else
+29     my_putchar(str[i]);
+30       i++;
+31     }
+32   return (i);
+33 }
+.fi
+.SS "char* stat_in_buff (char *strtbuffer, char *buffer, \fBt_getline\fP *s, char *dest)"
+
+.PP
+Definition at line 55 of file get_next_line\&.c\&.
+.PP
+References my_gstrcpy(), s_getline::s, SIZE_OF_READ, s_getline::stop, and where_my_buff_end()\&.
+.PP
+Referenced by get_next_line()\&.
+.PP
+.nf
+57 {
+58   int       j;
+59   static char   stockstat[SIZE_OF_READ + 1];
+60 
+61   j = 0;
+62   s->s = 0;
+63   my_gstrcpy(buffer, stockstat, s, dest);
+64   while (j != SIZE_OF_READ && s->stop !=  1)
+65     {
+66       buffer[s->s] = statbuffer[j];
+67       if (buffer[s->s] == '\n')
+68     {
+69       s->stop = 1;
+70       where_my_buff_end(statbuffer, stockstat, j);
+71       buffer[s->s] = '\0';
+72     }
+73       else
+74     buffer[s->s + 1] = '\0';
+75       s->s++;
+76       j++;
+77     }
+78   return (buffer);
+79 }
+.fi
+.SS "void where_my_buff_end (char *statbuffer, char *stockstat, intj)"
+
+.PP
+Definition at line 15 of file get_next_line\&.c\&.
+.PP
+Referenced by stat_in_buff()\&.
+.PP
+.nf
+16 {
+17   int       i;
+18 
+19   i = 0;
+20   while (statbuffer[j + 1])
+21     {
+22       stockstat[i] = statbuffer[j + 1];
+23       i++;
+24       j++;
+25     }
+26   stockstat[i] = '\0';
+27 }
+.fi
+.SS "int x_case (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 62 of file case_printf_part2\&.c\&.
+.PP
+References convert_base_deci_16_lun(), convert_base_deci_16_un(), and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+64 {
+65   long      n;
+66   int       r;
+67 
+68   (void)*tab;
+69   (void)*s;
+70   (void)*format;
+71   n = (long)argv;
+72   if (s->p == 2)
+73     r = convert_base_deci_16_lun((long unsigned int)n, "0123456789ABCDEF");
+74   else
+75     r = convert_base_deci_16_un((unsigned int)n, "0123456789ABCDEF");
+76   return (r);
+77 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

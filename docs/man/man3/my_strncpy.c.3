@@ -1,0 +1,44 @@
+.TH "lib/my/src/str/my_strncpy.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/str/my_strncpy.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBmy_strncpy\fP (char *dest, char *src, int nb)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char* my_strncpy (char *dest, char *src, intnb)"
+
+.PP
+Definition at line 13 of file my_strncpy\&.c\&.
+.PP
+Referenced by my_strndup()\&.
+.PP
+.nf
+14 {
+15   int   i;
+16 
+17   i = 0;
+18   while (src[i] != '\0' && i != nb)
+19     {
+20       dest[i] = src[i];
+21       i++;
+22     }
+23   dest[i] = '\0';
+24   return (dest);
+25 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

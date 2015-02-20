@@ -1,0 +1,160 @@
+.TH "lib/my/src/printf/case_printf_part1.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/case_printf_part1.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBs_putstr\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_p\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_x\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_c\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBcase_s\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int case_c (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 66 of file case_printf_part1\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+68 {
+69   long      c;
+70 
+71   (void)*s;
+72   (void)*format;
+73   (void)*tab;
+74   c = (long)argv;
+75   my_putchar((char)c);
+76   return (1);
+77 }
+.fi
+.SS "int case_p (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 35 of file case_printf_part1\&.c\&.
+.PP
+References convert_base_deci_16()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+37 {
+38   long      n;
+39   int       r;
+40 
+41   (void)*s;
+42   (void)*format;
+43   (void)*tab;
+44   n = (long)argv;
+45   r = convert_base_deci_16(n, "0123456789abcdef");
+46   return (r);
+47 }
+.fi
+.SS "int case_s (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 79 of file case_printf_part1\&.c\&.
+.PP
+References my_putstr()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+81 {
+82   long      *str;
+83   int       r;
+84 
+85   str = argv;
+86   (void)*format;
+87   (void)*tab;
+88   if (str == 0)
+89     {
+90       my_putstr("(null)");
+91       return (6);
+92     }
+93   (void)*s;
+94   r = my_putstr((char *)str);
+95   return (r);
+96 }
+.fi
+.SS "int case_x (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 49 of file case_printf_part1\&.c\&.
+.PP
+References convert_base_deci_16_lun(), convert_base_deci_16_un(), and s_index::p\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+51 {
+52   long      n;
+53   int       r;
+54 
+55   (void)*s;
+56   (void)*format;
+57   (void)*tab;
+58   n = (long)argv;
+59   if (s->p == 2)
+60     r = convert_base_deci_16_lun((long unsigned int)n, "0123456789abcdef");
+61   else
+62     r = convert_base_deci_16_un((unsigned int)n, "0123456789abcdef");
+63   return (r);
+64 }
+.fi
+.SS "int s_putstr (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 13 of file case_printf_part1\&.c\&.
+.PP
+References convert_base_deci_octal(), and my_putchar()\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+15 {
+16   int       i;
+17   char      *str;
+18 
+19   (void)*s;
+20   (void)*format;
+21   (void)*tab;
+22   str = argv;
+23   i = 0;
+24   while (str[i])
+25     {
+26       if (str[i] < 32 || str[i] >= 127)
+27     convert_base_deci_octal(str[i], "01234567");
+28       else
+29     my_putchar(str[i]);
+30       i++;
+31     }
+32   return (i);
+33 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

@@ -1,0 +1,37 @@
+.TH "lib/my/src/printf/my_putchar.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/my_putchar.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmy_putchar\fP (char c)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void my_putchar (charc)"
+
+.PP
+Definition at line 14 of file my_putchar\&.c\&.
+.PP
+Referenced by case_c(), case_pres(), case_sharp2(), my_find_pwd(), my_lputnbr(), my_lunputnbr(), my_printf2(), my_prompt(), my_putnbr(), my_putnbrnoaffich(), my_putnbrs(), my_putnstr(), my_putstr(), my_rev_caract_nimpr(), my_rev_int_tab_long(), my_rev_int_tab_un(), my_unputnbr(), my_unputnbrs(), and s_putstr()\&.
+.PP
+.nf
+15 {
+16   write(1, &c, 1);
+17 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

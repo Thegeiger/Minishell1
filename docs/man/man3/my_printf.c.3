@@ -1,0 +1,119 @@
+.TH "lib/my/src/printf/my_printf.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/my_printf.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmy_printf3\fP (const char *format, va_list ap, \fBt_index\fP *s, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "void \fBmy_printf2\fP (const char *format, va_list ap, \fBt_index\fP *s, const \fBt_struc\fP *tab)"
+.br
+.ti -1c
+.RI "int \fBmy_printf\fP (const char *format,\&.\&.\&.)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int my_printf (const char *format, \&.\&.\&.)"
+
+.PP
+Definition at line 57 of file my_printf\&.c\&.
+.PP
+References case_b(), case_c(), case_di(), case_l(), case_o(), case_p(), case_pres(), case_s(), case_sharp(), case_u(), case_x(), case_zero(), s_index::i, my_printf2(), s_index::p, s_index::r, s_putstr(), and x_case()\&.
+.PP
+Referenced by my_aff_env()\&.
+.PP
+.nf
+58 {
+59   va_list   ap;
+60   t_index   s;
+61   static const t_struc  tab[] = { { 's', &case_s }, { 'p', &case_p },
+62                   { 'd', &case_di },
+63               { 'b', &case_b }, { 'x', &case_x }, { 'S', &s_putstr },
+64               { 'X', &x_case }, { 'u', &case_u }, { 'i', &case_di },
+65               { 'o', &case_o }, { 'c', &case_c }, { '%', &case_pres },
+66               { '#', &case_sharp }, { '0', &case_zero }, { 'l', &case_l } };
+67 
+68   s\&.i = 0;
+69   s\&.r = 0;
+70   s\&.p = 0;
+71   va_start(ap, format);
+72   my_printf2(format, ap, &s, tab);
+73   va_end(ap);
+74   return (s\&.r);
+75 }
+.fi
+.SS "void my_printf2 (const char *format, va_listap, \fBt_index\fP *s, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 34 of file my_printf\&.c\&.
+.PP
+References s_index::i, my_printf3(), my_putchar(), s_index::n, s_index::nb, and s_index::r\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+36 {
+37   while (format[s->i])
+38     {
+39       s->n = 0;
+40       s->nb = 0;
+41       if (format[s->i] == '%')
+42     {
+43       s->i++;
+44       while (format[s->i] == ' ')
+45         s->i++;
+46       my_printf3(format, ap, s, tab);
+47     }
+48       else
+49     {
+50       my_putchar(format[s->i]);
+51       s->r++;
+52     }
+53       s->i++;
+54     }
+55 }
+.fi
+.SS "void my_printf3 (const char *format, va_listap, \fBt_index\fP *s, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 14 of file my_printf\&.c\&.
+.PP
+References s_struc::c, s_index::i, s_index::n, s_struc::ptr_tab, s_index::r, and s_index::res\&.
+.PP
+Referenced by my_printf2()\&.
+.PP
+.nf
+16 {
+17   while (tab[s->n]\&.c != format[s->i])
+18     {
+19       s->n++;
+20       if (s->n > 15)
+21     {
+22       s->i--;
+23       break;
+24     }
+25     }
+26   if (s->n <= 15)
+27     {
+28       s->res = s->r;
+29       s->r = (*tab[s->n]\&.ptr_tab)(va_arg(ap, void *), s, format, tab);
+30       s->r = s->res + s->r;
+31     }
+32 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

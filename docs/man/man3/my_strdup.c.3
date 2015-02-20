@@ -1,0 +1,45 @@
+.TH "lib/my/src/str/my_strdup.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/str/my_strdup.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBmy_strdup\fP (char *src)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char* my_strdup (char *src)"
+
+.PP
+Definition at line 14 of file my_strdup\&.c\&.
+.PP
+References my_strcpy(), and my_strlen()\&.
+.PP
+.nf
+15 {
+16   char  *new_str;
+17   int   size;
+18 
+19   size = my_strlen(src);
+20   new_str = malloc(sizeof(char) * size + 1);
+21   if (new_str == 0)
+22     return (0);
+23   my_strcpy(new_str, src);
+24   return (new_str);
+25 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

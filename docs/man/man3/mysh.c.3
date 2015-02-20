@@ -1,0 +1,243 @@
+.TH "src/mysh.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/mysh.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include 'my\&.h'\fP
+.br
+\fC#include 'mysh\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmy_unsetenv\fP (char *name, char **env)"
+.br
+.ti -1c
+.RI "void \fBmy_find_pwd\fP (char **env)"
+.br
+.ti -1c
+.RI "int \fBcase_unsetenv\fP (char *c, char **env)"
+.br
+.ti -1c
+.RI "int \fBcase_exit\fP (char **env)"
+.br
+.ti -1c
+.RI "int \fBcase_env\fP (char **env)"
+.br
+.ti -1c
+.RI "int \fBcase_pwd\fP (char **env)"
+.br
+.ti -1c
+.RI "int \fBminishell1\fP (char **env)"
+.br
+.ti -1c
+.RI "void \fBmy_prompt\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int case_env (char **env)"
+
+.PP
+Definition at line 100 of file mysh\&.c\&.
+.PP
+References my_aff_env()\&.
+.PP
+Referenced by minishell1()\&.
+.PP
+.nf
+101 {
+102   my_aff_env(env);
+103   return (0);
+104 }
+.fi
+.SS "int case_exit (char **env)"
+
+.PP
+Definition at line 94 of file mysh\&.c\&.
+.PP
+Referenced by minishell1()\&.
+.PP
+.nf
+95 {
+96   (void)env;
+97   return (1);
+98 }
+.fi
+.SS "int case_pwd (char **env)"
+
+.PP
+Definition at line 106 of file mysh\&.c\&.
+.PP
+References my_find_pwd()\&.
+.PP
+Referenced by minishell1()\&.
+.PP
+.nf
+107 {
+108   my_find_pwd(env);
+109   return (0);
+110 }
+.fi
+.SS "int case_unsetenv (char *c, char **env)"
+
+.PP
+Definition at line 72 of file mysh\&.c\&.
+.PP
+References my_putstr(), my_strcmp(), my_strncmp(), my_strnsdup(), and my_unsetenv()\&.
+.PP
+Referenced by minishell1()\&.
+.PP
+.nf
+73 {
+74   if (my_strncmp(c, "unsetenv", 8) == 0)
+75     {
+76       if (my_strcmp(c, "unsetenv") == 0)
+77     {
+78       my_putstr("Usage : unsetenv <env name>\n");
+79       return (0);
+80     }
+81       else if (c[8] == ' ')
+82     {
+83       if (my_unsetenv(my_strnsdup(c, 9), env) ==  - 1)
+84         {
+85           my_putstr("unsetenv error\n");
+86           return (1);
+87         }
+88       return (0);
+89     }
+90     }
+91   return (2);
+92 }
+.fi
+.SS "int minishell1 (char **env)"
+
+.PP
+Definition at line 112 of file mysh\&.c\&.
+.PP
+References case_env(), case_exit(), case_pwd(), case_unsetenv(), get_next_line(), my_putstr(), and my_strcmp()\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+113 {
+114   static const t_ptrtab tab[] =
+115     {
+116       { "exit", &case_exit },
+117       { "env", &case_env },
+118       { "pwd", &case_pwd },
+119     };
+120   char  *c;
+121   int   i;
+122   int   ret;
+123 
+124   i = 0;
+125   if ((c = get_next_line(0)) == NULL)
+126     return (1);
+127   if ((ret = case_unsetenv(c, env)) == 1)
+128     return (1);
+129   else if (ret == 0)
+130     return (0);
+131   while (i != 3 && my_strcmp(c, tab[i]\&.str) != 0)
+132     i++;
+133   if (i >= 3)
+134     {
+135       my_putstr(c);
+136       my_putstr(": command not found\n");
+137     }
+138   else
+139     if (tab[i]\&.ptr_tab(env) == 1)
+140       return (1);
+141   return (0);
+142 }
+.fi
+.SS "void my_find_pwd (char **env)"
+
+.PP
+Definition at line 56 of file mysh\&.c\&.
+.PP
+References my_putchar(), my_putnstr(), my_putstr(), and my_strncmp()\&.
+.PP
+Referenced by case_pwd()\&.
+.PP
+.nf
+57 {
+58   int   i;
+59 
+60   i = 0;
+61   while (env[i] != NULL && my_strncmp(env[i], "PWD", 3) == 1)
+62     i++;
+63   if (env[i] == NULL)
+64     my_putstr("/home\n");
+65   else
+66     {
+67       my_putnstr(env[i], 4);
+68       my_putchar('\n');
+69     }
+70 }
+.fi
+.SS "void my_prompt ()"
+
+.PP
+Definition at line 144 of file mysh\&.c\&.
+.PP
+References my_putchar(), my_putnbr(), and my_putstr()\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+145 {
+146   static int    size = 1;
+147 
+148   my_putstr("$>");
+149   my_putnbr(size);
+150   my_putchar(' ');
+151   size++;
+152 }
+.fi
+.SS "int my_unsetenv (char *name, char **env)"
+
+.PP
+Definition at line 35 of file mysh\&.c\&.
+.PP
+References my_putstr(), and my_strncmp()\&.
+.PP
+Referenced by case_unsetenv()\&.
+.PP
+.nf
+36 {
+37   int   i;
+38   int   x;
+39 
+40   i = 0;
+41   my_putstr(name);
+42   while (env[i] != 0)
+43     {
+44       x = 0;
+45       while (env[i][x] != '=' && env[i][x] != '\0')
+46     ++x;
+47       if (my_strncmp(env[i], name, x) == 0)
+48     {
+49 
+50     }
+51       ++i;
+52     }
+53   return (0);
+54 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

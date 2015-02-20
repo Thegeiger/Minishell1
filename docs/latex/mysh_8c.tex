@@ -1,0 +1,213 @@
+\hypertarget{mysh_8c}{\section{src/mysh.c File Reference}
+\label{mysh_8c}\index{src/mysh.\+c@{src/mysh.\+c}}
+}
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}my.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mysh.\+h\char`\"{}}\\*
+Include dependency graph for mysh.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mysh_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \hyperlink{mysh_8c_a496b9fe4a76f9ff28e287b02b09b6521}{my\+\_\+realloc\+\_\+tab\+\_\+str} (char $\ast$$\ast$tab, int size)
+\item 
+int \hyperlink{mysh_8c_aba8cbda41e22b44046182ef0f812058a}{my\+\_\+add\+\_\+to\+\_\+tab} (char $\ast$name, char $\ast$$\ast$tab)
+\item 
+int \hyperlink{mysh_8c_a1420c6c4f6130af4168d5556bb645643}{my\+\_\+unsetenv} (char $\ast$name, char $\ast$$\ast$env)
+\item 
+void \hyperlink{mysh_8c_a117317c5d13722f8cb100388ce29077b}{my\+\_\+find\+\_\+pwd} (char $\ast$$\ast$env)
+\item 
+int \hyperlink{mysh_8c_a19cc367c9d4376d9e074531675773419}{case\+\_\+unsetenv} (char $\ast$c, char $\ast$$\ast$env)
+\item 
+int \hyperlink{mysh_8c_acda6ee77643b3de8db6743e682b7deee}{my\+\_\+setenv} (char $\ast$name, char $\ast$$\ast$env)
+\item 
+int \hyperlink{mysh_8c_a1ab263b9ed4dab045592ecc7437f0082}{case\+\_\+setenv} (char $\ast$c, char $\ast$$\ast$env)
+\item 
+int \hyperlink{mysh_8c_a7c1151551f101020fc3999306ba73c69}{case\+\_\+exit} ()
+\item 
+int \hyperlink{mysh_8c_ab652927dab74a43119141512f578d8d2}{case\+\_\+env} (char $\ast$$\ast$env)
+\item 
+int \hyperlink{mysh_8c_acb9a87f826c78825c1d808fbce6985a9}{case\+\_\+pwd} (char $\ast$$\ast$env)
+\item 
+int \hyperlink{mysh_8c_a6d42456eb6a53546a1d5c5850c9cae1d}{my\+\_\+envset\+\_\+fonc} (char $\ast$c, char $\ast$$\ast$env)
+\item 
+int \hyperlink{mysh_8c_a2fdc7cf8d5b884218e5f3559ce2789d7}{ptr\+\_\+tab\+\_\+fonc} (char $\ast$c, char $\ast$$\ast$env)
+\item 
+int \hyperlink{mysh_8c_a92bb32d622719b834371dfdacdb56d09}{minishell1} (char $\ast$$\ast$env)
+\item 
+void \hyperlink{mysh_8c_a12eed0970f97b5ae8dc85cce79a44827}{my\+\_\+prompt} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{mysh_8c_ab652927dab74a43119141512f578d8d2}{\index{mysh.\+c@{mysh.\+c}!case\+\_\+env@{case\+\_\+env}}
+\index{case\+\_\+env@{case\+\_\+env}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{case\+\_\+env}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+env (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_ab652927dab74a43119141512f578d8d2}
+
+
+Definition at line 166 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a7c1151551f101020fc3999306ba73c69}{\index{mysh.\+c@{mysh.\+c}!case\+\_\+exit@{case\+\_\+exit}}
+\index{case\+\_\+exit@{case\+\_\+exit}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{case\+\_\+exit}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+exit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a7c1151551f101020fc3999306ba73c69}
+
+
+Definition at line 161 of file mysh.\+c.
+
+\hypertarget{mysh_8c_acb9a87f826c78825c1d808fbce6985a9}{\index{mysh.\+c@{mysh.\+c}!case\+\_\+pwd@{case\+\_\+pwd}}
+\index{case\+\_\+pwd@{case\+\_\+pwd}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{case\+\_\+pwd}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+pwd (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_acb9a87f826c78825c1d808fbce6985a9}
+
+
+Definition at line 172 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a1ab263b9ed4dab045592ecc7437f0082}{\index{mysh.\+c@{mysh.\+c}!case\+\_\+setenv@{case\+\_\+setenv}}
+\index{case\+\_\+setenv@{case\+\_\+setenv}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{case\+\_\+setenv}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+setenv (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{c, }
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a1ab263b9ed4dab045592ecc7437f0082}
+
+
+Definition at line 139 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a19cc367c9d4376d9e074531675773419}{\index{mysh.\+c@{mysh.\+c}!case\+\_\+unsetenv@{case\+\_\+unsetenv}}
+\index{case\+\_\+unsetenv@{case\+\_\+unsetenv}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{case\+\_\+unsetenv}]{\setlength{\rightskip}{0pt plus 5cm}int case\+\_\+unsetenv (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{c, }
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a19cc367c9d4376d9e074531675773419}
+
+
+Definition at line 110 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a92bb32d622719b834371dfdacdb56d09}{\index{mysh.\+c@{mysh.\+c}!minishell1@{minishell1}}
+\index{minishell1@{minishell1}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{minishell1}]{\setlength{\rightskip}{0pt plus 5cm}int minishell1 (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a92bb32d622719b834371dfdacdb56d09}
+
+
+Definition at line 217 of file mysh.\+c.
+
+\hypertarget{mysh_8c_aba8cbda41e22b44046182ef0f812058a}{\index{mysh.\+c@{mysh.\+c}!my\+\_\+add\+\_\+to\+\_\+tab@{my\+\_\+add\+\_\+to\+\_\+tab}}
+\index{my\+\_\+add\+\_\+to\+\_\+tab@{my\+\_\+add\+\_\+to\+\_\+tab}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{my\+\_\+add\+\_\+to\+\_\+tab}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+add\+\_\+to\+\_\+tab (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$$\ast$}]{tab}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_aba8cbda41e22b44046182ef0f812058a}
+
+
+Definition at line 60 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a6d42456eb6a53546a1d5c5850c9cae1d}{\index{mysh.\+c@{mysh.\+c}!my\+\_\+envset\+\_\+fonc@{my\+\_\+envset\+\_\+fonc}}
+\index{my\+\_\+envset\+\_\+fonc@{my\+\_\+envset\+\_\+fonc}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{my\+\_\+envset\+\_\+fonc}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+envset\+\_\+fonc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{c, }
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a6d42456eb6a53546a1d5c5850c9cae1d}
+
+
+Definition at line 178 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a117317c5d13722f8cb100388ce29077b}{\index{mysh.\+c@{mysh.\+c}!my\+\_\+find\+\_\+pwd@{my\+\_\+find\+\_\+pwd}}
+\index{my\+\_\+find\+\_\+pwd@{my\+\_\+find\+\_\+pwd}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{my\+\_\+find\+\_\+pwd}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+find\+\_\+pwd (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a117317c5d13722f8cb100388ce29077b}
+
+
+Definition at line 94 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a12eed0970f97b5ae8dc85cce79a44827}{\index{mysh.\+c@{mysh.\+c}!my\+\_\+prompt@{my\+\_\+prompt}}
+\index{my\+\_\+prompt@{my\+\_\+prompt}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{my\+\_\+prompt}]{\setlength{\rightskip}{0pt plus 5cm}void my\+\_\+prompt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a12eed0970f97b5ae8dc85cce79a44827}
+
+
+Definition at line 233 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a496b9fe4a76f9ff28e287b02b09b6521}{\index{mysh.\+c@{mysh.\+c}!my\+\_\+realloc\+\_\+tab\+\_\+str@{my\+\_\+realloc\+\_\+tab\+\_\+str}}
+\index{my\+\_\+realloc\+\_\+tab\+\_\+str@{my\+\_\+realloc\+\_\+tab\+\_\+str}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{my\+\_\+realloc\+\_\+tab\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ my\+\_\+realloc\+\_\+tab\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{tab, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a496b9fe4a76f9ff28e287b02b09b6521}
+
+
+Definition at line 34 of file mysh.\+c.
+
+\hypertarget{mysh_8c_acda6ee77643b3de8db6743e682b7deee}{\index{mysh.\+c@{mysh.\+c}!my\+\_\+setenv@{my\+\_\+setenv}}
+\index{my\+\_\+setenv@{my\+\_\+setenv}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{my\+\_\+setenv}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+setenv (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_acda6ee77643b3de8db6743e682b7deee}
+
+
+Definition at line 132 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a1420c6c4f6130af4168d5556bb645643}{\index{mysh.\+c@{mysh.\+c}!my\+\_\+unsetenv@{my\+\_\+unsetenv}}
+\index{my\+\_\+unsetenv@{my\+\_\+unsetenv}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{my\+\_\+unsetenv}]{\setlength{\rightskip}{0pt plus 5cm}int my\+\_\+unsetenv (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a1420c6c4f6130af4168d5556bb645643}
+
+
+Definition at line 74 of file mysh.\+c.
+
+\hypertarget{mysh_8c_a2fdc7cf8d5b884218e5f3559ce2789d7}{\index{mysh.\+c@{mysh.\+c}!ptr\+\_\+tab\+\_\+fonc@{ptr\+\_\+tab\+\_\+fonc}}
+\index{ptr\+\_\+tab\+\_\+fonc@{ptr\+\_\+tab\+\_\+fonc}!mysh.\+c@{mysh.\+c}}
+\subsubsection[{ptr\+\_\+tab\+\_\+fonc}]{\setlength{\rightskip}{0pt plus 5cm}int ptr\+\_\+tab\+\_\+fonc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{c, }
+\item[{char $\ast$$\ast$}]{env}
+\end{DoxyParamCaption}
+)}}\label{mysh_8c_a2fdc7cf8d5b884218e5f3559ce2789d7}
+
+
+Definition at line 193 of file mysh.\+c.
+

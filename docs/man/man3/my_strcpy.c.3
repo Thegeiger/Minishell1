@@ -1,0 +1,45 @@
+.TH "lib/my/src/str/my_strcpy.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/str/my_strcpy.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBmy_strcpy\fP (char *dest, char *src)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "char* my_strcpy (char *dest, char *src)"
+
+.PP
+Definition at line 13 of file my_strcpy\&.c\&.
+.PP
+Referenced by my_strdup()\&.
+.PP
+.nf
+14 {
+15   char  *dest_addr;
+16 
+17   dest_addr = dest;
+18   while ((*src) != '\0')
+19     {
+20       (*dest) = (*src);
+21       dest++;
+22       src++;
+23     }
+24   *dest = '\0';
+25   return (dest_addr);
+26 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

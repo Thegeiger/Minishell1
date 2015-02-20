@@ -1,0 +1,168 @@
+.TH "lib/my/src/printf/my_putnbr.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/my_putnbr.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmy_putnbr\fP (int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_putnbrnoaffich\fP (int nb)"
+.br
+.ti -1c
+.RI "int \fBmy_putnbrs\fP (int nb, int p, int nbr)"
+.br
+.ti -1c
+.RI "int \fBmy_lunputnbr\fP (long unsigned int nb)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int my_lunputnbr (long unsigned intnb)"
+
+.PP
+Definition at line 91 of file my_putnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by case_u(), and my_rev_lunint_tab()\&.
+.PP
+.nf
+92 {
+93   long int  div;
+94   int       i;
+95 
+96   i = 0;
+97   div = 1;
+98   while (nb / (div * 10) > 0)
+99     div = div * 10;
+100   while (div != 0)
+101     {
+102       if (div == 1)
+103         my_putchar(nb % 10 + 48);
+104       else
+105         my_putchar(nb / div + 48);
+106       i++;
+107       nb = nb % div;
+108       div = div / 10;
+109     }
+110   return (i);
+111 }
+.fi
+.SS "int my_putnbr (intnb)"
+
+.PP
+Definition at line 13 of file my_putnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_prompt(), my_putnbrs(), and my_rev_int_tab()\&.
+.PP
+.nf
+14 {
+15   int   div;
+16   int   i;
+17 
+18   i = 0;
+19   div = 1;
+20   if (nb < 0)
+21     {
+22       my_putchar('-');
+23       nb = - nb;
+24       i++;
+25     }
+26   while (div < 1000000000 && nb / (div * 10) > 0)
+27     div = div * 10;
+28   while (div != 0)
+29     {
+30       if (div == 1)
+31     my_putchar(nb % 10 + 48);
+32       else
+33     my_putchar(nb / div + 48);
+34       i++;
+35       nb = nb % div;
+36       div = div / 10;
+37     }
+38   return (i);
+39 }
+.fi
+.SS "int my_putnbrnoaffich (intnb)"
+
+.PP
+Definition at line 41 of file my_putnbr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by my_putnbrs()\&.
+.PP
+.nf
+42 {
+43   int   div;
+44   int   i;
+45 
+46   i = 0;
+47   div = 1;
+48   if (nb < 0)
+49     {
+50       my_putchar('-');
+51       nb = - nb;
+52       i++;
+53     }
+54   while (div < 1000000000 && nb / (div * 10) > 0)
+55     div = div * 10;
+56   while (div != 0)
+57     {
+58       nb = nb % div;
+59       div = div / 10;
+60       i++;
+61     }
+62   return (i);
+63 }
+.fi
+.SS "int my_putnbrs (intnb, intp, intnbr)"
+
+.PP
+Definition at line 65 of file my_putnbr\&.c\&.
+.PP
+References my_putchar(), my_putnbr(), and my_putnbrnoaffich()\&.
+.PP
+Referenced by case_di()\&.
+.PP
+.nf
+66 {
+67   int   i;
+68   int   ret;
+69   int   r;
+70 
+71   r = 0;
+72   ret = 0;
+73   if (p == 1)
+74     {
+75       i = my_putnbrnoaffich(nb);
+76       if (nb < 0)
+77     nb = - nb;
+78       while (nbr > i)
+79     {
+80       my_putchar('0');
+81       nbr--;
+82       r++;
+83     }
+84     }
+85   ret = r;
+86   r = my_putnbr(nb);
+87   r = ret + r;
+88   return (r);
+89 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

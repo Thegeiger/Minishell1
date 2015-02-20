@@ -1,0 +1,117 @@
+.TH "lib/my/src/printf/convert_base_deci_part2.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/convert_base_deci_part2.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmy_strlen\fP (char *str)"
+.br
+.ti -1c
+.RI "int \fBmy_rev_int_tab_long\fP (char *tab, long i)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_int_tab_un\fP (char *tab, long i)"
+.br
+.ti -1c
+.RI "void \fBmy_rev_int_tab\fP (int *tab, int i)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void my_rev_int_tab (int *tab, inti)"
+
+.PP
+Definition at line 54 of file convert_base_deci_part2\&.c\&.
+.PP
+References my_putnbr()\&.
+.PP
+Referenced by convert_base_deci_2()\&.
+.PP
+.nf
+55 {
+56   i--;
+57   while (i >= 0)
+58     {
+59       my_putnbr(tab[i]);
+60       i--;
+61     }
+62 }
+.fi
+.SS "int my_rev_int_tab_long (char *tab, longi)"
+
+.PP
+Definition at line 23 of file convert_base_deci_part2\&.c\&.
+.PP
+References my_putchar(), and my_putstr()\&.
+.PP
+Referenced by convert_base_deci_16()\&.
+.PP
+.nf
+24 {
+25   int   r;
+26 
+27   i--;
+28   if (tab[i] == 48 && tab[i + 1] == '\0')
+29     {
+30       my_putstr("(nil)");
+31       return (5);
+32     }
+33   my_putstr("0x");
+34   r = 2;
+35   while (i >= 0)
+36     {
+37       my_putchar(tab[i]);
+38       i--;
+39       r++;
+40     }
+41   return (r);
+42 }
+.fi
+.SS "void my_rev_int_tab_un (char *tab, longi)"
+
+.PP
+Definition at line 44 of file convert_base_deci_part2\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by convert_base_deci_16_lun(), and convert_base_deci_16_un()\&.
+.PP
+.nf
+45 {
+46   i--;
+47   while (i >= 0)
+48     {
+49       my_putchar(tab[i]);
+50       i--;
+51     }
+52 }
+.fi
+.SS "int my_strlen (char *str)"
+
+.PP
+Definition at line 13 of file convert_base_deci_part2\&.c\&.
+.PP
+Referenced by convert_base_deci_octal(), my_putnstr(), my_strdup(), my_strndup(), and my_strnsdup()\&.
+.PP
+.nf
+14 {
+15   int   i;
+16 
+17   i = 0;
+18   while (str[i])
+19     i++;
+20   return (i);
+21 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

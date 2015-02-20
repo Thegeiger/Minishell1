@@ -1,0 +1,45 @@
+.TH "lib/my/src/printf/my_putstr.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/my_putstr.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmy_putstr\fP (char *str)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int my_putstr (char *str)"
+
+.PP
+Definition at line 13 of file my_putstr\&.c\&.
+.PP
+References my_putchar()\&.
+.PP
+Referenced by case_s(), case_sharp2(), case_unsetenv(), minishell1(), my_find_pwd(), my_prompt(), my_rev_caract_nimpr(), my_rev_int_tab_long(), and my_unsetenv()\&.
+.PP
+.nf
+14 {
+15   int   i;
+16 
+17   i = 0;
+18   while (str[i])
+19     {
+20       my_putchar(str[i]);
+21       i++;
+22     }
+23   return (i);
+24 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.

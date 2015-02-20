@@ -1,0 +1,51 @@
+.TH "lib/my/src/printf/case_printf_part4.c" 3 "Wed Jan 7 2015" "Version 1.0" "myhs" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/my/src/printf/case_printf_part4.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'my\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBcase_l\fP (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int case_l (void *argv, \fBt_index\fP *s, const char *format, const \fBt_struc\fP *tab)"
+
+.PP
+Definition at line 13 of file case_printf_part4\&.c\&.
+.PP
+References s_struc::c, s_index::i, s_index::n, s_index::p, and s_struc::ptr_tab\&.
+.PP
+Referenced by my_printf()\&.
+.PP
+.nf
+15 {
+16   int       i;
+17 
+18   i = 0;
+19   if (format[s->i + 1] == 'x' || format[s->i + 1] == 'X'
+20       || format[s->i + 1] == 'o' || format[s->i + 1] == 'd'
+21       || format[s->i + 1] == 'i' || format[s->i + 1] == 'u')
+22     {
+23       s->p = 2;
+24       s->n = 0;
+25       while (tab[s->n]\&.c != format[s->i + 1])
+26     s->n++;
+27       i = (*tab[s->n]\&.ptr_tab)(argv, s, format, tab);
+28       s->i++;
+29     }
+30   return (i);
+31 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for myhs from the source code\&.
